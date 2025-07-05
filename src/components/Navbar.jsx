@@ -41,8 +41,8 @@ export default function Navbar() {
       {/* Nav Links (hidden on screen <= 1248px) */}
       <div className="hidden custom:hidden md:flex space-x-6">
         <Link to="/batches" className="hover:text-[#FCA311] font-medium">Batches</Link>
-        <Link to="/notes" className="hover:text-[#FCA311] font-medium">Docengo Notes</Link>
-        <Link to="/test-series" className="hover:text-[#FCA311] font-medium">Test Series</Link>
+        <Link to="/docengoNotes" className="hover:text-[#FCA311] font-medium">Docengo Notes</Link>
+        <Link to="/testSeries" className="hover:text-[#FCA311] font-medium">Test Series</Link>
         <Link to="/doubt" className="hover:text-[#FCA311] font-medium">Doubt Support</Link>
         <Link to="/about" className="hover:text-[#FCA311] font-medium">About Us</Link>
         <Link to="/help" className="hover:text-[#FCA311] font-medium">Help</Link>
@@ -62,18 +62,30 @@ export default function Navbar() {
           <div className="absolute right-0 mt-2 w-48 bg-[#1B263B] text-white rounded shadow-lg z-100 flex flex-col border border-[#FCA311]">
             <div className="md:hidden flex flex-col z-100">
               <Link to="/batches" className="px-4 py-2 hover:bg-[#FCA311]/20">Batches</Link>
-              <Link to="/notes" className="px-4 py-2 hover:bg-[#FCA311]/20">Docengo Notes</Link>
-              <Link to="/test-series" className="px-4 py-2 hover:bg-[#FCA311]/20">Test Series</Link>
+              <Link to="/docengoNotes" className="px-4 py-2 hover:bg-[#FCA311]/20">Docengo Notes</Link>
+              <Link to="/testSeries" className="px-4 py-2 hover:bg-[#FCA311]/20">Test Series</Link>
               <Link to="/doubt" className="px-4 py-2 hover:bg-[#FCA311]/20">Doubt Support</Link>
               <Link to="/about" className="px-4 py-2 hover:bg-[#FCA311]/20">About Us</Link>
               <Link to="/help" className="px-4 py-2 hover:bg-[#FCA311]/20">Help</Link>
             </div>
+
+            {user && !user.isAdmin &&  (
              <Link
               to="/myDoubts"
               className="px-4 py-2 text-left text-white hover:bg-[#FCA311]/20  font-semibold border-t border-[#FCA311]"
             >
               My Doubts
             </Link>
+            )}
+
+             {user?.isAdmin && (
+              <Link
+                to="/allDoubts"
+                className="px-4 py-2 text-left text-white hover:bg-[#FCA311]/20 font-semibold border-t border-[#FCA311]"
+              >
+                All Doubts
+              </Link>
+            )}
             <button
               onClick={handleLogout}
               className="px-4 py-2 text-left text-red-300 hover:bg-red-600/20 font-semibold border-t border-[#FCA311]"

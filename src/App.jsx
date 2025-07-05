@@ -4,6 +4,10 @@ import Signup from "./Pages/Signup"
 import Login from "./Pages/Login"
 import DoubtSupport from './Pages/DoubtSupport'
 import MyDoubts from './Pages/MyDoubts'
+import AdminAllDoubts from './Pages/AdminAllDoubts'
+import TestSeries from './Pages/TestSeries'
+import Notes from './Pages/Notes'
+import Help from './Pages/Help'
 
 
 function App() {
@@ -18,6 +22,10 @@ function App() {
         <Route path="/login" element = {<Login/>}></Route>
         <Route path="/doubt" element = {<DoubtSupport/>}></Route>
         <Route path="/myDoubts" element = {<MyDoubts/>}></Route>
+        <Route path="/allDoubts" element = {<AdminAllDoubts/>}></Route>
+        <Route path="/testSeries" element = {<TestSeries/>}></Route>
+        <Route path="/docengoNotes" element = {<Notes/>}></Route>
+        <Route path="/help" element = {<Help/>}></Route>
       </Routes>
     </BrowserRouter>
   )

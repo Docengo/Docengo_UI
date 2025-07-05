@@ -23,7 +23,7 @@ export default function LoginForm() {
     setMessage('');
 
     try {
-      await axios.post('http://localhost:2707/login', formData, {
+      const response = await axios.post('http://localhost:2707/login', formData, {
         withCredentials: true,
       });
 
@@ -31,8 +31,9 @@ export default function LoginForm() {
       setMessage(`✅ ${msg}`);
 
       setTimeout(() => {
-        navigate('/body');
+          navigate('/body'); 
       }, 1500);
+
     } catch (err) {
       console.error('Login Error:', err.response?.data);
       const errorMsg = err.response?.data || '❌ Login failed. Try again.';

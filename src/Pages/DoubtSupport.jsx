@@ -20,10 +20,18 @@ export default function DoubtSupport() {
     try {
       await axios.post('http://localhost:2707/doubt/submit', formData, {withCredentials: true});
       setMessage('✅ Doubt submitted successfully!');
+      setTimeout(() => {
+        setMessage('');
+      }, 3000)
+      
       setFormData({ subject: '', topic:'', question: '' });
     } catch (err) {
       console.error(err);
       setMessage('❌ Failed to submit doubt. Try again.');
+      setTimeout(() => {
+        setMessage('');
+      }, 3000)
+      
     }
   };
 
