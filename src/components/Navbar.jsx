@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import logo from '../assets/logo.png'; // Adjust the path as necessary
 
 export default function Navbar() {
   const [user, setUser] = useState(null);
@@ -36,7 +37,13 @@ export default function Navbar() {
 
   return (
     <nav className="bg-[#14213D] text-white flex fixed top-0 items-center justify-between z-[999] px-[22px] py-3 shadow-md shadow-[#908e8e] w-full">
-      <Link to="/body"><div className="text-[#FCA311] text-xl font-bold ">Docengo</div></Link>
+    <Link to="/body">
+      <div className="flex items-center space-x-2 text-[#FCA311] text-xl font-bold">
+        <img src={logo} alt="Logo" className="w-[4rem]" />
+        <span>Docengo</span>
+      </div>
+    </Link>
+  
 
       {/* Nav Links (hidden on screen <= 1248px) */}
       <div className="hidden custom:hidden md:flex space-x-6">
