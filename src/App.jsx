@@ -8,6 +8,7 @@ import AdminAllDoubts from './Pages/AdminAllDoubts'
 import TestSeries from './Pages/TestSeries'
 import Notes from './Pages/Notes'
 import Help from './Pages/Help'
+import About from './Pages/About'
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/testSeries" element = {<TestSeries/>}></Route>
         <Route path="/docengoNotes" element = {<Notes/>}></Route>
         <Route path="/help" element = {<Help/>}></Route>
+        <Route path="/about" element = {<About/>}></Route>
       </Routes>
     </BrowserRouter>
   )
