@@ -36,7 +36,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-[#14213D] text-white flex fixed top-0 items-center justify-between z-[999] px-[22px] py-3 shadow-md shadow-[#908e8e] w-full">
-      <div className="text-[#FCA311] text-xl font-bold ">Docengo</div>
+      <Link to="/body"><div className="text-[#FCA311] text-xl font-bold ">Docengo</div></Link>
 
       {/* Nav Links (hidden on screen <= 1248px) */}
       <div className="hidden custom:hidden md:flex space-x-6">
