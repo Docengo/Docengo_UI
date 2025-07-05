@@ -23,7 +23,7 @@ function Body() {
         <img
           src={banners[currentBanner]}
           alt={`Docengo Banner ${currentBanner + 1}`}
-          className="w-full h-auto max-h-[380px] mt-[4rem] transition-opacity duration-1000"
+          className="w-full h-auto max-h-[300px] mt-[4rem]  transition-opacity duration-1000"
         />
       </div>
     </div>
