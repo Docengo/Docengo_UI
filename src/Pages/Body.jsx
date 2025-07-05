@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Banner1 from '../assets/Banner1.png';
 import Banner2 from '../assets/Banner2.png';
 import CardContainer from '../components/CardContainer';
+import animation from "../assets/animation.mp4";
 
 const banners = [Banner1, Banner2];
 
@@ -22,7 +23,8 @@ function Body() {
       <Navbar />
 
       {/* Top Banner Section */}
-      <div className="w-full h-screen bg-[#edf2fe]">
+      <div className="w-full bg-[#edf2fe]">
+        {/* Rotating Banner */}
         <div className="relative w-full h-[225px] mt-[4rem] overflow-hidden">
           <AnimatePresence mode="sync">
             <motion.img
@@ -38,21 +40,37 @@ function Body() {
           </AnimatePresence>
         </div>
 
-        {/* Tagline Section */}
-        <div className="ml-24 max-w-[600px] mt-[7rem]">
-          <h1 className="text-4xl font-extrabold leading-snug text-[#14213d]">
-            Because <span className="text-red-500">YouTube</span> and <span className="text-red-500">10x</span> speed won’t save your rank!
-          </h1>
-          <p className="text-lg text-gray-600 mt-4">
-            Real learning. Real mentors. Real results — That’s Docengo.
-          </p>
-          <button className="mt-6 bg-[#fca311] hover:bg-[#e5940d] text-white font-semibold px-6 py-3 rounded-xl shadow-md">
-            Unlock Docengo 🔓
-          </button>
+        {/* Tagline + Animation Section */}
+        <div className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-24 py-[5rem] gap-12">
+          {/* Tagline */}
+          <div className="max-w-[600px]">
+            <h1 className="text-4xl font-extrabold leading-snug text-[#14213d]">
+              Because <span className="text-red-500">YouTube</span> and <span className="text-red-500">10x</span> speed won’t save your rank!
+            </h1>
+            <p className="text-lg text-gray-600 mt-4">
+              Real learning. Real mentors. Real results — That’s Docengo.
+            </p>
+            <button className="mt-6 bg-[#fca311] hover:bg-[#e5940d] text-white font-semibold px-6 py-3 rounded-xl shadow-md">
+              Unlock Docengo 🔓
+            </button>
+          </div>
+
+          {/* Animation Video */}
+          <div className="max-w-[600px] w-full">
+            <video
+              src={animation}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full rounded-xl shadow-lg"
+            />
+          </div>
         </div>
       </div>
 
-      <CardContainer/>
+      {/* Cards Section */}
+      <CardContainer />
     </div>
   );
 }
