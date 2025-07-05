@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Banner1 from '../assets/Banner1.png';
 import Banner2 from '../assets/Banner2.png';
-import CourseCards from '../components/CourseCards';
+import CardContainer from '../components/CardContainer';
 
 const banners = [Banner1, Banner2];
 
@@ -52,7 +52,7 @@ function Body() {
         </div>
       </div>
 
-      <CourseCards/>
+      <CardContainer/>
     </div>
   );
 }
