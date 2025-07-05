@@ -13,7 +13,7 @@ function Body() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBanner((prev) => (prev + 1) % banners.length);
-    }, 5000); // change every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
