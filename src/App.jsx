@@ -14,14 +14,17 @@ import Pros from './Pages/Pros'
 import AllHelp from './Pages/AllHelp'
 import UserProfile from './Pages/UserProfile'
 import EditProfile from './components/EditProfile'
+import NetworkStatus from './components/NetworkStatus';
 
 
 function App() {
  
 
   return (
+    
 
     <BrowserRouter>
+    <NetworkStatus />
       <Routes>
         <Route path="/body" element = {<Body/>}></Route>
         <Route path="/signup" element = {<Signup/>}></Route>
@@ -36,6 +39,7 @@ function App() {
         <Route path="/footer" element = {<Footer/>}></Route>
         <Route path="/myProfile" element = {<UserProfile/>}></Route>
         <Route path="/editProfile" element = {<EditProfile/>}></Route>
+
       </Routes>
     </BrowserRouter>
   )

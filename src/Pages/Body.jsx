@@ -57,9 +57,11 @@ function Body() {
             <p className="text-lg text-gray-600 mt-4">
               Real learning. Real mentors. Real results — That’s Docengo.
             </p>
-            <button className="mt-6 bg-[#fca311] hover:bg-[#e5940d] text-white font-semibold px-6 py-3 rounded-xl shadow-md">
-              Unlock Docengo 🔓
-            </button>
+            <button className="mt-6 bg-gradient-to-r from-red-500 to-[#14213d] hover:opacity-90 text-white font-semibold px-6 py-3 rounded-xl shadow-md">
+  Unlock Docengo 🔓
+</button>
+
+
           </div>
 
           {/* Animation Video */}
