@@ -44,7 +44,7 @@ function About() {
             NEET, JEE, or any goal — we’ve got your back with real mentors and resources that deliver.
           </p>
 
-          <button className="mt-10 bg-gradient-to-r from-[#fca311] to-[#14213D] text-white font-semibold px-8 py-3 rounded-full shadow-lg transition duration-300">
+          <button className="mt-10 bg-gradient-to-r border-[1px] border-white from-[#fca311] to-[#14213D] text-white font-semibold px-8 py-3 rounded-full shadow-lg transition duration-300">
             Explore the Docengo Way 🚀
           </button>
         </div>
