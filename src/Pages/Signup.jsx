@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import FloatingActions from '../components/FloatingActions';
+import PassEye from '../assets/PassEye.png'; // Update path if needed
+
 
 export default function SignupForm() {
   const [formData, setFormData] = useState({
@@ -17,6 +19,10 @@ export default function SignupForm() {
   const [streams, setStreams] = useState([]);
   const [classes, setClasses] = useState([]);
   const [message, setMessage] = useState('');
+
+  const [showPassword, setShowPassword] = useState(false);
+
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -138,15 +144,25 @@ export default function SignupForm() {
               <option className='text-black' key={idx} value={cls}>{cls}</option>
             ))}
           </select>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={handleChange}
-            className="w-full max-w-[660px] px-4 py-2 rounded-md border border-gray-300 bg-[#E5E5E5] focus:outline-none mx-auto md:col-span-2"
-            required
-          />
+          <div className="relative w-full max-w-[660px] mx-auto md:col-span-2">
+  <input
+    type={showPassword ? "text" : "password"}
+    name="password"
+    placeholder="Password"
+    value={formData.password}
+    onChange={handleChange}
+    className="w-full px-4 py-2 pr-12 rounded-md border border-gray-300 bg-[#E5E5E5] focus:outline-none"
+    required
+  />
+  <img
+    src={PassEye}
+    alt="Toggle Password"
+    onClick={() => setShowPassword(!showPassword)}
+    className="absolute top-1/2 right-3 transform -translate-y-1/2 w-6 h-6 cursor-pointer opacity-70 hover:opacity-100"
+  />
+</div>
+
+
         </div>
 
         {message && (
