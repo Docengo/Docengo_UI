@@ -45,7 +45,7 @@ function Body() {
         </div>
 
         {/* Tagline + Animation Section */}
-        <div className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-24 py-[5rem] gap-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-24 py-[3rem] gap-12">
           {/* Tagline */}
           <div className="max-w-[600px]">
             <h1 className="text-4xl font-extrabold leading-snug text-[#14213d]">
