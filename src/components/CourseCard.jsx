@@ -1,4 +1,6 @@
-function CourseCard({ title, image, link }) {
+import { Link } from 'react-router-dom';
+
+function CourseCard({ title, image }) {
   return (
     <div className="bg-[#1B263B] text-white p-6 rounded-2xl shadow-lg shadow-slate-500 hover:scale-[1.03] transition-transform duration-300">
       {/* Title */}
@@ -13,12 +15,12 @@ function CourseCard({ title, image, link }) {
       {/* Buttons or View Courses link */}
       <div className="flex justify-center gap-5 mb-4">
         {title === 'Other Exams' ? (
-          <a
-            href={link}
+          <Link
+            to="/other-exams"
             className="border-[1px] bg-[#FCA311] border-white text-sm font-semibold text-[#14213D] hover:bg-white hover:text-red-500 hover:scale-[1.08] hover:font-bold py-2 px-6 rounded-3xl shadow transition"
           >
-            View Courses
-          </a>
+            More Courses
+          </Link>
         ) : (
           ['Class 11', 'Class 12', 'Dropper'].map((label) => (
             <button

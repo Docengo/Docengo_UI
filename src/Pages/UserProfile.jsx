@@ -45,7 +45,8 @@ export default function UserProfile() {
       <Navbar />
 
       <div className="min-h-screen bg-[#14213D] pt-[7rem] px-4 flex justify-center items-start">
-        <div className="bg-[#1B263B] text-white rounded-3xl shadow-lg max-w-3xl w-full p-10">
+      <div className="bg-[#131827] text-[#14213D] rounded-3xl shadow-lg max-w-3xl w-full p-10">
+
           <div className="text-center mb-10">
             <h2 className="text-4xl font-extrabold text-[#FCA311]">
               Welcome, {user.fullName.split(" ")[0]} 👋
@@ -66,7 +67,7 @@ export default function UserProfile() {
               className="w-32 h-32 rounded-full object-cover border-4 border-[#FCA311] shadow-md"
             />
             <div className="text-center md:text-left">
-              <h3 className="text-2xl font-semibold">{user.fullName}</h3>
+              <h3 className="text-2xl font-semibold text-[#EEF3FF]">{user.fullName}</h3>
               <p className="text-[#FCA311] font-medium mt-1 flex items-center justify-center md:justify-start gap-2">
                 <MdEmail /> {user.emailId}
               </p>
