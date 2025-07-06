@@ -10,11 +10,7 @@ import Notes from './Pages/Notes'
 import Help from './Pages/Help'
 import About from './Pages/About'
 import Footer from './components/Footer'
-<<<<<<< HEAD
-import Pros from './Pages/Pros'
-=======
 import AllHelp from './Pages/AllHelp'
->>>>>>> 384345545cb4df4bc01156b1f74c88f896c281c0
 
 function App() {
  
@@ -35,7 +31,6 @@ function App() {
         <Route path="/allHelp" element = {<AllHelp/>}></Route>
         <Route path="/about" element = {<About/>}></Route>
         <Route path="/footer" element = {<Footer/>}></Route>
-        <Route path="/pros" element = {<Pros/>}></Route>
       </Routes>
     </BrowserRouter>
   )
