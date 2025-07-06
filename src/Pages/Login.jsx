@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import FloatingActions from '../components/FloatingActions';
-import PassEye from '../assets/PassEye.png';
+import { Eye, EyeOff } from "lucide-react"; // open and closed eye icons
+
 
 
 export default function LoginForm() {
@@ -76,12 +77,16 @@ export default function LoginForm() {
     className="w-full px-4 py-2 rounded-md border border-gray-300 bg-[#E5E5E5] focus:outline-none pr-10"
     required
   />
-  <img
-    src={PassEye}
-    alt="Toggle visibility"
-    className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 cursor-pointer"
+   <div
+    className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
     onClick={() => setShowPassword((prev) => !prev)}
-  />
+  >
+    {showPassword ? (
+      <Eye className="h-5 w-5 text-gray-600" />
+    ) : (
+      <EyeOff className="h-5 w-5 text-gray-600" />
+    )}
+  </div>
 </div>
 
         {message && (

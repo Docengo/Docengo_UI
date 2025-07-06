@@ -8,6 +8,7 @@ import { MdEmail } from "react-icons/md";
 export default function UserProfile() {
   const [user, setUser] = useState(null);
   const [error, setError] = useState("");
+  const [isImageOpen, setIsImageOpen] = useState(false);
 
   useEffect(() => {
     axios
@@ -37,16 +38,18 @@ export default function UserProfile() {
     );
   }
 
-  console.log("photoUrl", user.photoUrl);
-
+  const imageUrl =
+    user.photoUrl ||
+    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png";
 
   return (
-    <div>
+    <div className="relative">
       <Navbar />
 
       <div className="min-h-screen bg-[#14213D] pt-[7rem] px-4 flex justify-center items-start">
-      <div className="bg-[#131827] text-[#14213D] rounded-3xl shadow-lg max-w-3xl w-full p-10">
+        <div className="bg-[#131827] text-[#14213D] rounded-3xl shadow-lg max-w-3xl w-full p-10">
 
+          {/* Header */}
           <div className="text-center mb-10">
             <h2 className="text-4xl font-extrabold text-[#FCA311]">
               Welcome, {user.fullName.split(" ")[0]} 👋
@@ -56,15 +59,13 @@ export default function UserProfile() {
             </p>
           </div>
 
-          {/* Profile Photo + Info */}
+          {/* Profile Image + Info */}
           <div className="flex flex-col md:flex-row items-center gap-6">
             <img
-              src={
-                user.photoUrl ||
-                "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
-              }
-              alt="Profile"
-              className="w-32 h-32 rounded-full object-cover border-4 border-[#FCA311] shadow-md"
+              src={imageUrl}
+              alt={user.fullName + "'s profile photo"}
+              className="w-32 h-32 rounded-full object-cover border-4 border-[#FCA311] shadow-md cursor-pointer"
+              onClick={() => setIsImageOpen(true)}
             />
             <div className="text-center md:text-left">
               <h3 className="text-2xl font-semibold text-[#EEF3FF]">{user.fullName}</h3>
@@ -88,6 +89,31 @@ export default function UserProfile() {
           </div>
         </div>
       </div>
+
+      {/* 🟡 Floating Image Preview (Not Fullscreen) */}
+      {isImageOpen && (
+        <div
+          className="fixed inset-0 flex items-center justify-center z-50"
+          onClick={() => setIsImageOpen(false)}
+        >
+          <div
+            className="relative backdrop-blur-md bg-[#131827]/70 p-6 rounded-2xl shadow-2xl border border-[#FCA311]/20"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={imageUrl}
+              alt="Enlarged Profile"
+              className="w-64 h-64 rounded-full object-cover border-4 border-[#FCA311]"
+            />
+            <button
+              onClick={() => setIsImageOpen(false)}
+              className="absolute -top-2 -right-2 bg-red-600 text-blue-950 font-bold w-7 h-7 flex items-center justify-center rounded-md shadow hover:bg-red-700"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -99,7 +125,7 @@ function DetailCard({ icon, label, value }) {
         <span>{icon}</span>
         {label}
       </div>
-      <p className="text-white pl-8">{value}</p>
+      <p className="text-white pl-8">{value || "Not provided"}</p>
     </div>
   );
 }

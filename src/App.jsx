@@ -19,11 +19,13 @@ import Footer from "./components/Footer";
 import UserProfile from "./Pages/UserProfile";
 import EditProfile from "./components/EditProfile";
 import NetworkStatus from "./components/NetworkStatus"
+import { Toaster } from "react-hot-toast";
 
 export default function App() {
   return (
-
+ 
 <BrowserRouter>
+<Toaster position="top-center" reverseOrder={false} />
   <NetworkStatus />
   <Routes>
     {/* Public routes */}

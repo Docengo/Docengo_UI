@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function CourseCard({ title, image }) {
   return (
-    <div className="bg-[#1B263B] text-white p-6 rounded-2xl shadow-lg shadow-slate-500 hover:scale-[1.03] transition-transform duration-300">
+    <div className="bg-[#131827] text-white p-6 rounded-2xl shadow-lg shadow-slate-500 hover:scale-[1.03] transition-transform duration-300">
       {/* Title */}
       <h3 className="text-xl font-bold mb-4 text-center">{title}</h3>
 

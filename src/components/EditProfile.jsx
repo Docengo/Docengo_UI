@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 export default function EditProfile() {
   const [user, setUser] = useState(null);
@@ -17,6 +18,7 @@ export default function EditProfile() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  // Fetch existing profile
   useEffect(() => {
     axios
       .get("http://localhost:2707/profile/view", { withCredentials: true })
@@ -43,7 +45,7 @@ export default function EditProfile() {
     const file = e.target.files[0];
     if (file) {
       setPhoto(file);
-      setPreview(URL.createObjectURL(file));
+      setPreview(URL.createObjectURL(file)); // Preview locally
     }
   };
 
@@ -58,18 +60,20 @@ export default function EditProfile() {
     }
 
     try {
-      await axios.patch("http://localhost:2707/profile/edit", payload, {
+      const res = await axios.patch("http://localhost:2707/profile/edit", payload, {
         withCredentials: true,
         headers: { "Content-Type": "multipart/form-data" },
       });
-      alert("✅ Profile updated successfully!");
+
+      toast.success("Profile updated successfully!");
       navigate("/myProfile");
     } catch (err) {
       console.error(err);
-      alert("❌ Failed to update profile.");
+      toast.error("Failed to update profile.");
     }
   };
 
+  // UI states
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#14213D] text-red-500">
@@ -89,7 +93,7 @@ export default function EditProfile() {
   return (
     <div>
       <Navbar />
-      <div className="min-h-screen bg-[#14213D] pt-[7rem] px-4 flex justify-center items-start">
+      <div className="min-h-screen bg-[#14213D] pt-[7rem] px-4 flex justify-center items-start pb-[8rem]">
         <div className="bg-[#091021] text-white rounded-3xl shadow-md max-w-3xl w-full p-10 relative">
           <div className="text-center mb-10">
             <h2 className="text-4xl font-extrabold text-[#FCA311]">
