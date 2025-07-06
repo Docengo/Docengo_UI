@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProtectedLayout from "./components/ProtectedLayout"
+import PublicRoute from "./components/PublicRoute";
 
 // Public
 import Signup from "./Pages/Signup";
@@ -26,8 +27,10 @@ export default function App() {
   <NetworkStatus />
   <Routes>
     {/* Public routes */}
+    <Route element={<PublicRoute/>}>
     <Route path="/signup" element={<Signup />} />
     <Route path="/login" element={<Login />} />
+    </Route>
 
     {/* Protected routes */}
     <Route element={<ProtectedLayout />}>
