@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaBrain, FaPenFancy, FaRocket, FaUsers, FaClipboardCheck, FaVideo } from 'react-icons/fa';
+import FloatingActions from '../components/FloatingActions';
 
 const features = [
   {
@@ -64,6 +65,7 @@ function DocengoAdvantage() {
           ))}
         </div>
       </div>
+      <FloatingActions />
     </section>
   );
 }

@@ -3,6 +3,7 @@ import axios from "axios";
 import Navbar from "../components/Navbar"; 
 import help_image from "../assets/help_image.jpg";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import FloatingActions from "../components/FloatingActions";
 
 
 export default function Help() {
@@ -162,6 +163,7 @@ export default function Help() {
           </div>
         </div>
       </div>
+      <FloatingActions />
     </div>
   );
 }

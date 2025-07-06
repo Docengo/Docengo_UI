@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import FloatingActions from '../components/FloatingActions';
 
 export default function SignupForm() {
   const [formData, setFormData] = useState({
@@ -171,6 +172,7 @@ export default function SignupForm() {
           </Link>
         </p>
       </form>
+      <FloatingActions />
     </div>
   );
 }

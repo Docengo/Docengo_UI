@@ -2,6 +2,7 @@ import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import AboutImage from '../assets/About.png';
 import Navbar from '../components/Navbar';
+import FloatingActions from '../components/FloatingActions';
 
 function About() {
   return (
@@ -59,6 +60,7 @@ function About() {
       </div>
     </div>
     </section>
+    <FloatingActions />
     </div>
   );
 }

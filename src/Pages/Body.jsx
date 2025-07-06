@@ -8,6 +8,9 @@ import animation from "../assets/animation.mp4";
 import Pros from './Pros';
 import About from "./About";
 import Footer from '../components/Footer';
+import FloatingActions from '../components/FloatingActions';
+import Highlights from '../components/Highlights';
+
 
 
 const banners = [Banner1, Banner2];
@@ -72,9 +75,11 @@ function Body() {
           </div>
         </div>
       </div>
+      <Highlights />
 
       {/* Cards Section */}
       <CardContainer />
+      <FloatingActions />
       <Pros />
       <About />
       <Footer />

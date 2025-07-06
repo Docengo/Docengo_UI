@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaInstagram, FaLinkedin, FaFacebook, FaTelegram, FaEnvelope } from 'react-icons/fa';
 import { FaWhatsapp } from 'react-icons/fa6';
+import FloatingActions from './FloatingActions';
 
 function Footer() {
   return (
@@ -58,7 +59,7 @@ function Footer() {
               <li><a href="/about" className="hover:text-[#FCA311]">About Us</a></li>
               <li><a href="/neet" className="hover:text-[#FCA311]">NEET Courses</a></li>
               <li><a href="/jee" className="hover:text-[#FCA311]">JEE Courses</a></li>
-              <li><a href="/foundation" className="hover:text-[#FCA311]">Competitive Exams</a></li>
+              <li><a href="/foundation" className="hover:text-[#FCA311]">Other Competitive Exams</a></li>
             </ul>
           </div>
 
@@ -102,9 +103,13 @@ function Footer() {
         <div className="mt-10 text-center text-xs text-[#E5E5E5] border-t border-[#E5E5E5]/20 pt-4">
           © {new Date().getFullYear()} Docengo. All rights reserved.
         </div>
+
+      <FloatingActions />
+
       </footer>
     </>
   );
 }
+
 
 export default Footer;
