@@ -5,6 +5,10 @@ import Banner1 from '../assets/Banner1.png';
 import Banner2 from '../assets/Banner2.png';
 import CardContainer from '../components/CardContainer';
 import animation from "../assets/animation.mp4";
+import Pros from './Pros';
+import About from "./About";
+import Footer from '../components/Footer';
+
 
 const banners = [Banner1, Banner2];
 
@@ -71,6 +75,9 @@ function Body() {
 
       {/* Cards Section */}
       <CardContainer />
+      <Pros />
+      <About />
+      <Footer />
     </div>
   );
 }

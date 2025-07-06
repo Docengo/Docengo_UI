@@ -10,6 +10,7 @@ import Notes from './Pages/Notes'
 import Help from './Pages/Help'
 import About from './Pages/About'
 import Footer from './components/Footer'
+import Pros from './Pages/Pros'
 
 function App() {
  
@@ -29,6 +30,7 @@ function App() {
         <Route path="/help" element = {<Help/>}></Route>
         <Route path="/about" element = {<About/>}></Route>
         <Route path="/footer" element = {<Footer/>}></Route>
+        <Route path="/pros" element = {<Pros/>}></Route>
       </Routes>
     </BrowserRouter>
   )
