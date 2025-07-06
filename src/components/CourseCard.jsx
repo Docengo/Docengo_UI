@@ -22,14 +22,17 @@ function CourseCard({ title, image }) {
             More Courses
           </Link>
         ) : (
-          ['Class 11', 'Class 12', 'Dropper'].map((label) => (
-            <button
-              key={label}
-              className="border-[1px] bg-[#FCA311] border-white text-sm font-semibold text-[#14213D] hover:bg-white hover:text-red-500 hover:scale-[1.08] hover:font-bold py-2 px-4 rounded-3xl shadow transition"
+         
+           <button
+              className="group text-[#FCA311] text-md font-semibold hover:scale-[1.08] hover:font-bold py-2 px-4 rounded-3xl shadow transition"
             >
-              {label}
+              <span className="underline underline-offset-2 hover:text-red-600">Explore Batches</span>{" "}
+              <span className="text-[#FCA311] text-lg font-semibold no-underline group-hover:text-red-600 transition">
+                →
+              </span>
             </button>
-          ))
+            
+         
         )}
       </div>
     </div>

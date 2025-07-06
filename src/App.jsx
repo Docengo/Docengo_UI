@@ -51,6 +51,7 @@ export default function App() {
       <Route path="/editProfile" element={<EditProfile />} />
       <Route path="/other-exams" element={<OtherExamsPage/>}/>
       <Route path="/allHelp" element={<AllHelp/>}/>
+      
     </Route>
   </Routes>
 </BrowserRouter>
