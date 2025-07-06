@@ -30,7 +30,7 @@ function Body() {
       <Navbar />
 
       {/* Top Banner Section */}
-      <div className="w-full bg-[#edf2fe]">
+      <div className="w-full ">
         {/* Rotating Banner */}
         <div className="relative w-full h-[225px] mt-[4rem] overflow-hidden">
           <AnimatePresence mode="sync">
@@ -48,7 +48,7 @@ function Body() {
         </div>
 
         {/* Tagline + Animation Section */}
-        <div className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-24 py-[3rem] gap-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-24 py-[3rem] pb-[8rem] gap-12 bg-[#edf2fe]">
           {/* Tagline */}
           <div className="max-w-[600px]">
             <h1 className="text-4xl font-extrabold leading-snug text-[#14213d]">
@@ -73,9 +73,13 @@ function Body() {
               className="w-full rounded-xl shadow-lg"
             />
           </div>
+          
+        </div>
+        <div className=' -mt-[9rem]'>
+          <Highlights className="bg-white" />
         </div>
       </div>
-      <Highlights />
+      
 
       {/* Cards Section */}
       <CardContainer />

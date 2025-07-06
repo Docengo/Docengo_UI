@@ -1,169 +1,193 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar";
+import { useNavigate } from "react-router-dom";
 
 export default function EditProfile() {
+  const [user, setUser] = useState(null);
   const [formData, setFormData] = useState({
     fullName: "",
-    emailId: "",
+    city: "",
     stream: "",
     className: "",
-    city: "",
     mobileNumber: "",
-    photoUrl: "",
   });
-
-  const [message, setMessage] = useState("");
+  const [photo, setPhoto] = useState(null);
+  const [preview, setPreview] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
       .get("http://localhost:2707/profile/view", { withCredentials: true })
-      .then((res) => setFormData(res.data))
-      .catch((err) => console.error("Error fetching profile:", err));
+      .then((res) => {
+        setUser(res.data);
+        setFormData({
+          fullName: res.data.fullName || "",
+          city: res.data.city || "",
+          stream: res.data.stream || "",
+          className: res.data.className || "",
+          mobileNumber: res.data.mobileNumber || "",
+        });
+        setPreview(res.data.photoUrl || "");
+      })
+      .catch(() => setError("Failed to load profile."));
   }, []);
 
-  const handleChange = (e) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setMessage("");
-
-    try {
-      await axios.patch(
-        "http://localhost:2707/profile/edit",
-        formData,
-        { withCredentials: true }
-      );
-      setMessage("✅ Profile updated successfully!");
-      setTimeout(() => setMessage(""), 3000);
-    } catch (err) {
-      console.error(err);
-      setMessage("❌ Failed to update profile.");
-      setTimeout(() => setMessage(""), 3000);
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setPhoto(file);
+      setPreview(URL.createObjectURL(file));
     }
   };
 
-  return (
-    <div className="min-h-screen bg-[#14213D]  pt-[6rem] px-4 flex flex-col items-center">
-      <Navbar />
-      <div className="bg-[#1B263B] text-white max-w-2xl w-full p-8 rounded-3xl shadow-lg shadow-slate-400">
-        <h2 className="text-3xl font-bold text-[#FCA311] mb-6 text-center">Edit Profile</h2>
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const payload = new FormData();
+    Object.entries(formData).forEach(([key, value]) => {
+      payload.append(key, value);
+    });
+    if (photo) {
+      payload.append("photo", photo);
+    }
 
-        <form onSubmit={handleSubmit} className="space-y-5">
-          {/* Full Name */}
-          <Input
-            label="Full Name"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleChange}
-          />
+    try {
+      await axios.patch("http://localhost:2707/profile/edit", payload, {
+        withCredentials: true,
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      alert("✅ Profile updated successfully!");
+      navigate("/myProfile");
+    } catch (err) {
+      console.error(err);
+      alert("❌ Failed to update profile.");
+    }
+  };
 
-          {/* Email (readonly) */}
-          <Input
-            label="Email"
-            name="emailId"
-            value={formData.emailId}
-            readOnly
-          />
-
-          {/* Stream and Class */}
-          <div className="flex flex-col md:flex-row gap-4">
-            <Select
-              label="Stream"
-              name="stream"
-              value={formData.stream}
-              options={["JEE", "NEET", "Other"]}
-              onChange={handleChange}
-            />
-            <Select
-              label="Class"
-              name="className"
-              value={formData.className}
-              options={["IX", "X", "XI", "XII", "Dropper"]}
-              onChange={handleChange}
-            />
-          </div>
-
-          {/* City and Phone */}
-          <div className="flex flex-col md:flex-row gap-4">
-            <Input
-              label="City"
-              name="city"
-              value={formData.city}
-              onChange={handleChange}
-            />
-            <Input
-              label="Mobile Number"
-              name="mobileNumber"
-              value={formData.mobileNumber}
-              onChange={handleChange}
-            />
-          </div>
-
-          {/* Photo URL */}
-          <Input
-            label="Photo URL"
-            name="photoUrl"
-            value={formData.photoUrl}
-            onChange={handleChange}
-          />
-
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full bg-[#FCA311] hover:bg-[#e5940d] text-white font-bold py-2 px-4 rounded shadow transition"
-          >
-            Save Changes
-          </button>
-
-          {message && (
-            <p className="text-center mt-2 text-[#FCA311] font-semibold">{message}</p>
-          )}
-        </form>
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#14213D] text-red-500">
+        <p>{error}</p>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
-// 🔸 Reusable Input component
-function Input({ label, name, value, onChange, readOnly = false }) {
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#14213D] text-white">
+        <p>Loading profile...</p>
+      </div>
+    );
+  }
+
   return (
     <div>
-      <label className="block text-sm font-medium text-[#FCA311] mb-1">{label}</label>
-      <input
-        name={name}
-        value={value}
-        onChange={onChange}
-        readOnly={readOnly}
-        className={`w-full px-4 py-2 rounded border ${
-          readOnly ? "bg-gray-300 cursor-not-allowed" : "bg-[#F8F9FA]"
-        } text-black focus:outline-none focus:ring-2 focus:ring-[#FCA311]/40`}
-        required={!readOnly}
-      />
-    </div>
-  );
-}
+      <Navbar />
+      <div className="min-h-screen bg-[#14213D] pt-[7rem] px-4 flex justify-center items-start">
+        <div className="bg-[#1B263B] text-white rounded-3xl shadow-md max-w-3xl w-full p-10 relative">
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-extrabold text-[#FCA311]">
+              Edit Your Profile ✏️
+            </h2>
+            <p className="text-gray-300 text-sm mt-2">
+              Make changes and save to update your info.
+            </p>
+          </div>
 
-// 🔸 Reusable Select component
-function Select({ label, name, value, options, onChange }) {
-  return (
-    <div className="w-full">
-      <label className="block text-sm font-medium text-[#FCA311] mb-1">{label}</label>
-      <select
-        name={name}
-        value={value}
-        onChange={onChange}
-        className="w-full px-4 py-2 rounded border border-gray-300 bg-[#F8F9FA] text-black focus:outline-none focus:ring-2 focus:ring-[#FCA311]/40"
-        required
-      >
-        <option value="" disabled>Select {label}</option>
-        {options.map((opt) => (
-          <option key={opt} value={opt}>{opt}</option>
-        ))}
-      </select>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Image Upload + Preview */}
+            <div className="flex flex-col items-center mb-6">
+              <img
+                src={
+                  preview ||
+                  "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
+                }
+                alt="Profile Preview"
+                className="w-28 h-28 rounded-full border-4 border-[#FCA311] object-cover shadow-md"
+              />
+              <label className="mt-3 text-sm cursor-pointer bg-[#FCA311] px-4 py-2 rounded-lg shadow text-white hover:bg-[#e49f12]">
+                Change Photo
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  className="hidden"
+                />
+              </label>
+            </div>
+
+            {/* Form Fields */}
+            <input
+              type="text"
+              name="fullName"
+              value={formData.fullName}
+              onChange={handleInputChange}
+              placeholder="Full Name"
+              className="w-full px-4 py-2 rounded border bg-[#F8F9FA] text-black"
+            />
+
+            <div className="flex flex-col md:flex-row gap-4">
+              <input
+                type="text"
+                name="city"
+                value={formData.city}
+                onChange={handleInputChange}
+                placeholder="City"
+                className="flex-1 px-4 py-2 rounded border bg-[#F8F9FA] text-black"
+              />
+              <input
+                type="text"
+                name="mobileNumber"
+                value={formData.mobileNumber}
+                onChange={handleInputChange}
+                placeholder="Mobile Number"
+                className="flex-1 px-4 py-2 rounded border bg-[#F8F9FA] text-black"
+              />
+            </div>
+
+            <div className="flex flex-col md:flex-row gap-4">
+              <select
+                name="stream"
+                value={formData.stream}
+                onChange={handleInputChange}
+                className="flex-1 px-4 py-2 rounded border bg-[#F8F9FA] text-black"
+              >
+                <option value="">Select Stream</option>
+                <option value="JEE">JEE</option>
+                <option value="NEET">NEET</option>
+                <option value="Other">Other</option>
+              </select>
+
+              <select
+                name="className"
+                value={formData.className}
+                onChange={handleInputChange}
+                className="flex-1 px-4 py-2 rounded border bg-[#F8F9FA] text-black"
+              >
+                <option value="">Select Class</option>
+                <option value="IX">IX</option>
+                <option value="X">X</option>
+                <option value="XI">XI</option>
+                <option value="XII">XII</option>
+                <option value="Dropper">Dropper</option>
+              </select>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-[#FCA311] text-white font-bold py-3 rounded shadow-lg hover:bg-[#e49f12]"
+            >
+              Save Changes
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
