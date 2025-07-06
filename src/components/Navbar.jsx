@@ -39,7 +39,7 @@ export default function Navbar() {
     <nav className="bg-[#14213D] text-white flex fixed top-0 items-center justify-between z-[999] px-[22px] py-3 shadow-md shadow-[#908e8e] w-full">
     <Link to="/body">
       <div className="flex items-center space-x-2 text-[#FCA311] text-xl font-bold">
-        <img src={logo} alt="Logo" className="w-[4rem]" />
+        <img src={logo} alt="Logo" className="w-[2.5rem] h-[2.5rem] bg-white pt-1 mt-1 ml-2  rounded-full" />
         <span>Docengo</span>
       </div>
     </Link>
@@ -52,7 +52,12 @@ export default function Navbar() {
         <Link to="/testSeries" className="hover:text-[#FCA311] font-medium">Test Series</Link>
         <Link to="/doubt" className="hover:text-[#FCA311] font-medium">Doubt Support</Link>
         <Link to="/about" className="hover:text-[#FCA311] font-medium">About Us</Link>
-        <Link to="/help" className="hover:text-[#FCA311] font-medium">Help</Link>
+        <Link
+           to={user?.isAdmin ? "/allHelp" : "/help"}
+          className="hover:text-[#FCA311] font-medium"
+          >
+          Help
+        </Link>
       </div>
 
       {/* Profile Image */}
@@ -73,7 +78,12 @@ export default function Navbar() {
               <Link to="/testSeries" className="px-4 py-2 hover:bg-[#FCA311]/20">Test Series</Link>
               <Link to="/doubt" className="px-4 py-2 hover:bg-[#FCA311]/20">Doubt Support</Link>
               <Link to="/about" className="px-4 py-2 hover:bg-[#FCA311]/20">About Us</Link>
-              <Link to="/help" className="px-4 py-2 hover:bg-[#FCA311]/20">Help</Link>
+               <Link
+                  to={user?.isAdmin ? "/allHelp" : "/help"}
+                  className="hover:text-[#FCA311] font-medium"
+                >
+                  Help
+                </Link>
             </div>
 
             {user && !user.isAdmin &&  (

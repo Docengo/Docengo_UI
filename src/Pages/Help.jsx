@@ -1,7 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
-import Navbar from "../components/Navbar"; // Adjust path if needed
+import Navbar from "../components/Navbar"; 
 import help_image from "../assets/help_image.jpg";
+import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+
 
 export default function Help() {
   const [formData, setFormData] = useState({
@@ -48,7 +50,7 @@ export default function Help() {
   return (
     <div>
       <Navbar />
-      <div className="min-h-screen bg-[#14213D] flex flex-col items-center justify-center pt-[3rem] pb-[5rem] px-4">
+      <div className="min-h-screen bg-[#14213D] flex flex-col items-center justify-center pt-[6rem] pb-[4rem] px-4">
         <h2 className="text-3xl font-extrabold text-[#fca311] text-center mb-[2.5rem]">
           Need Some Help?
         </h2>
@@ -64,7 +66,7 @@ export default function Help() {
           </div>
 
           {/* Right Form */}
-          <div className="w-full lg:w-1/2 p-8 pl-2">
+          <div className="w-full lg:w-1/2 p-8 mt-8 pl-2">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="flex flex-col md:flex-row gap-4">
                 <input
@@ -139,6 +141,23 @@ export default function Help() {
                   {message}
                 </p>
               )}
+
+               
+              {/* Contact Info Side by Side */}
+                <div className=" flex flex-wrap justify-center gap-6 text-white">
+                  <div className="flex items-center gap-2">
+                    <FaPhoneAlt className="text-[#FCA311]" />
+                    <span className="text-sm">+91 88821 53238</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FaEnvelope className="text-[#FCA311]" />
+                    <span className="text-sm">info@docengoeducation.com</span>
+                  </div>
+                </div>
+
+
+
+
             </form>
           </div>
         </div>
