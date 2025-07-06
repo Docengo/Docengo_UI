@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
+import FloatingActions from '../components/FloatingActions';
 
 export default function DoubtSupport() {
   const [formData, setFormData] = useState({
@@ -91,6 +92,7 @@ export default function DoubtSupport() {
         </button>
       </form>
     </div>
+    <FloatingActions />
     </div>
   );
 }

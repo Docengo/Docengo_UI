@@ -11,6 +11,9 @@ import Help from './Pages/Help'
 import About from './Pages/About'
 import Footer from './components/Footer'
 import Pros from './Pages/Pros'
+import FloatingActions from "./components/FloatingActions";
+
+
 
 function App() {
  
@@ -31,6 +34,7 @@ function App() {
         <Route path="/about" element = {<About/>}></Route>
         <Route path="/footer" element = {<Footer/>}></Route>
         <Route path="/pros" element = {<Pros/>}></Route>
+        <Route path="/floatingactions" element={<FloatingActions />} />        
       </Routes>
     </BrowserRouter>
   )

@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar"; // adjust path if needed
+import FloatingActions from "../components/FloatingActions";
 
 export default function TestSeries() {
   return (
@@ -22,6 +23,7 @@ export default function TestSeries() {
           </div>
         </div>
       </div>
+      <FloatingActions />
     </div>
   );
 }
