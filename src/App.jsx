@@ -15,6 +15,7 @@ import AllHelp from './Pages/AllHelp'
 import UserProfile from './Pages/UserProfile'
 import EditProfile from './components/EditProfile'
 import NetworkStatus from './components/NetworkStatus';
+import OtherExamsPage from './Pages/OtherExamsPage'; // ⬅️ new page
 
 
 function App() {
@@ -39,7 +40,9 @@ function App() {
         <Route path="/footer" element = {<Footer/>}></Route>
         <Route path="/myProfile" element = {<UserProfile/>}></Route>
         <Route path="/editProfile" element = {<EditProfile/>}></Route>
-
+        <Route path="/pros" element = {<Pros/>}></Route>
+        <Route path="/allHelp" element = {<AllHelp/>}></Route>
+        <Route path="/other-exams" element={<OtherExamsPage />} />
       </Routes>
     </BrowserRouter>
   )
