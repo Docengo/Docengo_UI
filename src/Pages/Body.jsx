@@ -10,6 +10,7 @@ import About from "./About";
 import Footer from '../components/Footer';
 import FloatingActions from '../components/FloatingActions';
 import Highlights from '../components/Highlights';
+import FloatingFeedback from "../components/FloatingFeedback";
 
 
 
@@ -86,6 +87,7 @@ function Body() {
       {/* Cards Section */}
       <CardContainer />
       <FloatingActions />
+      <FloatingFeedback />
       <Pros />
       <About />
       <Footer />
