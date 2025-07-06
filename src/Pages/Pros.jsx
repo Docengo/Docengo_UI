@@ -46,7 +46,9 @@ function DocengoAdvantage() {
     <section className="bg-[#f5f8ff] py-16 px-6 md:px-20">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl md:text-5xl font-extrabold text-[#14213D] mb-4">
-          Why <span className="text-[#FCA311]">Docengo</span>? Here's Your <span className="text-[#FCA311]">Rank Advantage 😎</span>
+          Why <span className="text-transparent bg-gradient-to-r from-[#fca311] to-[#14213d] bg-clip-text drop-shadow-md">
+    Docengo
+  </span>? Here's Your <span className="text-[#FCA311]">Rank Advantage 😎</span>
         </h2>
         <p className="text-md md:text-lg text-[#14213D] max-w-3xl mx-auto mb-10">
           No spammy bundles. No mass coaching chaos. Just crystal-clear mentorship, topic-wise buying, and <strong>Chocolate-priced prep</strong> — powered by India’s finest minds.
