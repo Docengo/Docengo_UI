@@ -10,6 +10,7 @@ import Notes from './Pages/Notes'
 import Help from './Pages/Help'
 import About from './Pages/About'
 import Footer from './components/Footer'
+import AllHelp from './Pages/AllHelp'
 
 function App() {
  
@@ -27,6 +28,7 @@ function App() {
         <Route path="/testSeries" element = {<TestSeries/>}></Route>
         <Route path="/docengoNotes" element = {<Notes/>}></Route>
         <Route path="/help" element = {<Help/>}></Route>
+        <Route path="/allHelp" element = {<AllHelp/>}></Route>
         <Route path="/about" element = {<About/>}></Route>
         <Route path="/footer" element = {<Footer/>}></Route>
       </Routes>
