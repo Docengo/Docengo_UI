@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import FloatingActions from '../components/FloatingActions';
+import PassEye from '../assets/PassEye.png';
+
 
 export default function LoginForm() {
   const [formData, setFormData] = useState({
@@ -10,6 +12,8 @@ export default function LoginForm() {
   });
 
   const [message, setMessage] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -62,15 +66,23 @@ export default function LoginForm() {
           required
         />
 
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          className="w-full mb-4 px-4 py-2 rounded-md border border-gray-300 bg-[#E5E5E5] focus:outline-none"
-          required
-        />
+<div className="relative mb-4">
+  <input
+    type={showPassword ? 'text' : 'password'}
+    name="password"
+    placeholder="Password"
+    value={formData.password}
+    onChange={handleChange}
+    className="w-full px-4 py-2 rounded-md border border-gray-300 bg-[#E5E5E5] focus:outline-none pr-10"
+    required
+  />
+  <img
+    src={PassEye}
+    alt="Toggle visibility"
+    className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 cursor-pointer"
+    onClick={() => setShowPassword((prev) => !prev)}
+  />
+</div>
 
         {message && (
           <p className="text-center text-base font-semibold text-[#FCA311] mt-4 animate-pulse tracking-wide">
