@@ -103,6 +103,12 @@ export default function Navbar() {
                 All Doubts
               </Link>
             )}
+            <Link
+              to="/myProfile"
+              className="px-4 py-2 text-left text-white hover:bg-[#FCA311]/20 font-semibold border-t border-[#FCA311]"
+            >
+            My Profile
+            </Link>
             <button
               onClick={handleLogout}
               className="px-4 py-2 text-left text-red-300 hover:bg-red-600/20 font-semibold border-t border-[#FCA311]"
