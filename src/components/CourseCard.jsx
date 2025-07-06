@@ -17,7 +17,7 @@ function CourseCard({ title, image, link }) {
             href={link}
             className="border-[1px] bg-[#FCA311] border-white text-sm font-semibold text-[#14213D] hover:bg-white hover:text-red-500 hover:scale-[1.08] hover:font-bold py-2 px-6 rounded-3xl shadow transition"
           >
-            View Courses
+            More Courses
           </a>
         ) : (
           ['Class 11', 'Class 12', 'Dropper'].map((label) => (
