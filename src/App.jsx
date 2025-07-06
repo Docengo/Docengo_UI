@@ -11,12 +11,8 @@ import Help from './Pages/Help'
 import About from './Pages/About'
 import Footer from './components/Footer'
 import Pros from './Pages/Pros'
-<<<<<<< HEAD
 import FloatingActions from "./components/FloatingActions";
-
-=======
-import AllHelp from './Pages/AllHelp'
->>>>>>> 4ace05b821fa3154f177fa9a2969942746538873
+import AllHelp from './Pages/AllHelp';
 
 
 function App() {
@@ -37,11 +33,9 @@ function App() {
         <Route path="/help" element = {<Help/>}></Route>
         <Route path="/about" element = {<About/>}></Route>
         <Route path="/footer" element = {<Footer/>}></Route>
-<<<<<<< HEAD
         <Route path="/pros" element = {<Pros/>}></Route>
-        <Route path="/floatingactions" element={<FloatingActions />} />        
-=======
->>>>>>> 4ace05b821fa3154f177fa9a2969942746538873
+        <Route path="floatingActions" element = {<FloatingActions/>}></Route>
+        <Route path="/allHelp" element = {<AllHelp/>}></Route>
       </Routes>
     </BrowserRouter>
   )
