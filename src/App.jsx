@@ -19,6 +19,8 @@ import Footer from "./components/Footer";
 import UserProfile from "./Pages/UserProfile";
 import EditProfile from "./components/EditProfile";
 import NetworkStatus from "./components/NetworkStatus"
+import OtherExamsPage from "./Pages/OtherExamsPage"
+import AllHelp from "./Pages/AllHelp"
 import { Toaster } from "react-hot-toast";
 
 export default function App() {
@@ -47,6 +49,8 @@ export default function App() {
       <Route path="/footer" element={<Footer />} />
       <Route path="/myProfile" element={<UserProfile />} />
       <Route path="/editProfile" element={<EditProfile />} />
+      <Route path="/other-exams" element={<OtherExamsPage/>}/>
+      <Route path="/allHelp" element={<AllHelp/>}/>
     </Route>
   </Routes>
 </BrowserRouter>

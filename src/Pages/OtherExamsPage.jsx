@@ -5,8 +5,10 @@ import FloatingActions from '../components/FloatingActions';
 
 function OtherExamsPage() {
   return (
-    <div className="bg-[#14213D] min-h-screen text-center px-6 py-12">
+    <div>
       <Navbar />
+    <div className="bg-[#14213D] min-h-screen text-center px-6 py-12">
+      
 
       {/* <h2 className="text-white text-3xl md:text-5xl font-bold mb-8">Other Exams</h2> */}
 
@@ -19,7 +21,7 @@ function OtherExamsPage() {
       </div>
 
       <FloatingActions />
-    </div>
+    </div></div>
   );
 }
 
