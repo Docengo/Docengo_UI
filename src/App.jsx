@@ -12,6 +12,8 @@ import About from './Pages/About'
 import Footer from './components/Footer'
 import Pros from './Pages/Pros'
 import AllHelp from './Pages/AllHelp'
+import UserProfile from './Pages/UserProfile'
+import EditProfile from './components/EditProfile'
 
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
         <Route path="/help" element = {<Help/>}></Route>
         <Route path="/about" element = {<About/>}></Route>
         <Route path="/footer" element = {<Footer/>}></Route>
+        <Route path="/myProfile" element = {<UserProfile/>}></Route>
+        <Route path="/editProfile" element = {<EditProfile/>}></Route>
       </Routes>
     </BrowserRouter>
   )
