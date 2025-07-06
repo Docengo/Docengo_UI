@@ -90,7 +90,7 @@ export default function EditProfile() {
     <div>
       <Navbar />
       <div className="min-h-screen bg-[#14213D] pt-[7rem] px-4 flex justify-center items-start">
-        <div className="bg-[#1B263B] text-white rounded-3xl shadow-md max-w-3xl w-full p-10 relative">
+        <div className="bg-[#091021] text-white rounded-3xl shadow-md max-w-3xl w-full p-10 relative">
           <div className="text-center mb-10">
             <h2 className="text-4xl font-extrabold text-[#FCA311]">
               Edit Your Profile ✏️
