@@ -6,6 +6,8 @@ import { FiPhoneCall } from 'react-icons/fi';
 import { div } from 'framer-motion/client';
 import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
+import Charge_Batch_pdf from "../assets/Charge_Batch_pdf.pdf"
+import Mole_Batch_pdf from "../assets/Mole_Batch_pdf.pdf"
 
 const batches = [
   {
@@ -19,7 +21,7 @@ const batches = [
       weekends: "Solve your DPX's📝",
     },
     image: Neet12,
-    detailsPDF: '/docs/neet-achievers-batch.pdf',
+    detailsPDF: Charge_Batch_pdf,
   },
   {
     id: 2,
@@ -32,7 +34,7 @@ const batches = [
       weekends: "Solve your DPX's📝",
     },
     image: Neet11,
-    detailsPDF: '/docs/neet-foundation-batch.pdf',
+    detailsPDF: Mole_Batch_pdf,
   },
 ];
 
@@ -156,7 +158,7 @@ const NeetBatches = () => {
       {showCallButton && (
         <a
           href="tel:+918882153238"
-          className="fixed top-10 left-[50%] center bg-red-600 text-white  p-8  rounded-full shadow-xl hover:scale-105 hover:bg-red-700 transition-all duration-200 group z-50"
+          className="fixed top-20 left-[50%] center bg-red-600 text-white  p-8  rounded-full shadow-xl hover:scale-105 hover:bg-red-700 transition-all duration-200 group z-50"
           title="Call Us"
         >
           <FiPhoneCall size={32} className="group-hover:animate-pulse" />

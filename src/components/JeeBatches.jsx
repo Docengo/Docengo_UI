@@ -7,6 +7,7 @@ import { div } from 'framer-motion/client';
 import Navbar from './Navbar';
 import Charge_Batch_pdf from "../assets/Charge_Batch_pdf.pdf"
 import Mole_Batch_pdf from "../assets/Mole_Batch_pdf.pdf"
+import { Link } from 'react-router-dom';
 
 const batches = [
   {
@@ -120,9 +121,11 @@ const NeetBatches = () => {
 
               {/* Buttons */}
               <div className="mt-4 flex flex-wrap gap-3">
+                <Link to="/register-payment">
                 <button className="bg-[#FCA311] text-white font-semibold px-4 py-1.5 rounded-full hover:bg-[#e89900] transition">
                   Pay Registration Fee
                 </button>
+                </Link>
                 <button
                   className="border border-[#FCA311] text-[#FCA311] font-semibold px-4 py-1.5 rounded-full hover:bg-[#FCA311] hover:text-white transition"
                   onClick={handleCallBackClick}
@@ -156,7 +159,7 @@ const NeetBatches = () => {
       {showCallButton && (
         <a
           href="tel:+918882153238"
-          className="fixed top-10 left-[50%] center bg-red-600 text-white  p-8  rounded-full shadow-xl hover:scale-105 hover:bg-red-700 transition-all duration-200 group z-50"
+          className="fixed top-20 left-[50%] center bg-red-600 text-white   p-8  rounded-full shadow-xl hover:scale-105 hover:bg-red-700 transition-all duration-200 group z-50"
           title="Call Us"
         >
           <FiPhoneCall size={32} className="group-hover:animate-pulse" />
