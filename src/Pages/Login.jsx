@@ -2,9 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import FloatingActions from '../components/FloatingActions';
-import { Eye, EyeOff } from "lucide-react"; // open and closed eye icons
-
-
+import { Eye, EyeOff } from "lucide-react";
 
 export default function LoginForm() {
   const [formData, setFormData] = useState({
@@ -37,7 +35,7 @@ export default function LoginForm() {
       setMessage(`✅ ${msg}`);
 
       setTimeout(() => {
-          navigate('/body'); 
+        navigate('/body');
       }, 1500);
 
     } catch (err) {
@@ -67,37 +65,42 @@ export default function LoginForm() {
           required
         />
 
-<div className="relative mb-4">
-  <input
-    type={showPassword ? 'text' : 'password'}
-    name="password"
-    placeholder="Password"
-    value={formData.password}
-    onChange={handleChange}
-    className="w-full px-4 py-2 rounded-md border border-gray-300 bg-[#E5E5E5] focus:outline-none pr-10"
-    required
-  />
-   <div
-    className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
-    onClick={() => setShowPassword((prev) => !prev)}
-  >
-    {showPassword ? (
-      <Eye className="h-5 w-5 text-gray-600" />
-    ) : (
-      <EyeOff className="h-5 w-5 text-gray-600" />
-    )}
-  </div>
-</div>
+        <div className="relative mb-2">
+          <input
+            type={showPassword ? 'text' : 'password'}
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            className="w-full px-4 py-2 rounded-md border border-gray-300 bg-[#E5E5E5] focus:outline-none pr-10"
+            required
+          />
+          <div
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+            onClick={() => setShowPassword((prev) => !prev)}
+          >
+            {showPassword ? (
+              <Eye className="h-5 w-5 text-gray-600" />
+            ) : (
+              <EyeOff className="h-5 w-5 text-gray-600" />
+            )}
+          </div>
+        </div>
+
+        {/* Forgot Password link */}
+        <div className="text-right text-sm text-blue-600 hover:underline mb-2">
+          <Link to="/forgot-password">Forgot Password?</Link>
+        </div>
 
         {message && (
-          <p className="text-center text-base font-semibold text-[#FCA311] mt-4 animate-pulse tracking-wide">
+          <p className="text-center text-base font-semibold text-[#FCA311] mt-2 animate-pulse tracking-wide">
             {message}
           </p>
         )}
 
         <button
           type="submit"
-          className="w-full bg-[#FCA311] hover:bg-[#e3960d] text-white font-bold py-2 px-4 rounded mt-6"
+          className="w-full bg-[#FCA311] hover:bg-[#e3960d] text-white font-bold py-2 px-4 rounded mt-4"
         >
           Log In
         </button>
