@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FeedbackModal from "./FeedbackModal";
-import feedbackIcon from "../assets/feedback.png";
+import feedbackIcon from "../assets/Feedback.png";
 
 export default function FloatingFeedback() {
   const [showModal, setShowModal] = useState(false);
