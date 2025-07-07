@@ -57,9 +57,9 @@ function Footer() {
             <h3 className="text-lg font-semibold mb-3">Explore</h3>
             <ul className="space-y-2 text-sm text-[#E5E5E5]">
               <li><a href="/about" className="hover:text-[#FCA311]">About Us</a></li>
-              <li><a href="/neet" className="hover:text-[#FCA311]">NEET Courses</a></li>
-              <li><a href="/jee" className="hover:text-[#FCA311]">JEE Courses</a></li>
-              <li><a href="/foundation" className="hover:text-[#FCA311]">Other Competitive Exams</a></li>
+              <li><a href="/neet-batches" className="hover:text-[#FCA311]">NEET Courses</a></li>
+              <li><a href="/jee-batches" className="hover:text-[#FCA311]">JEE Courses</a></li>
+              <li><a href="/other-exams" className="hover:text-[#FCA311]">Other Competitive Exams</a></li>
             </ul>
           </div>
 
