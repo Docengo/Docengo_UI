@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Neet12 from "../assets/Neet12.png";
-import Neet11 from "../assets/Neet11.png";
+import NEET11 from "../assets/NEET11.png";
 import BBP from "../assets/BBP.png";
 import { FiPhoneCall } from 'react-icons/fi';
 import { div } from 'framer-motion/client';
@@ -33,7 +33,7 @@ const batches = [
       weekdays: '75 - 90 mins per day',
       weekends: "Solve your DPX's📝",
     },
-    image: Neet11,
+    image: NEET11,
     detailsPDF: Mole_Batch_pdf,
   },
 ];
