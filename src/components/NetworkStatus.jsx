@@ -26,7 +26,7 @@ function NetworkStatus() {
         <img
           src={offlineImg}
           alt="Offline"
-          className="w-40 h-40 object-contain mb-4"
+          className="w-45 h-45 object-contain mb-4"
         />
         <h2 className="text-xl font-semibold text-gray-700">
           Oops! You’re offline.
