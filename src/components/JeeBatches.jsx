@@ -5,6 +5,8 @@ import BBP from "../assets/BBP.png";
 import { FiPhoneCall } from 'react-icons/fi';
 import { div } from 'framer-motion/client';
 import Navbar from './Navbar';
+import Charge_Batch_pdf from "../assets/Charge_Batch_pdf.pdf"
+import Mole_Batch_pdf from "../assets/Mole_Batch_pdf.pdf"
 
 const batches = [
   {
@@ -18,7 +20,7 @@ const batches = [
       weekends: "Solve your DPX's📝",
     },
     image: Jee12,
-    detailsPDF: '/docs/neet-achievers-batch.pdf',
+    detailsPDF: Charge_Batch_pdf,
   },
   {
     id: 2,
@@ -31,7 +33,7 @@ const batches = [
       weekends: "Solve your DPX's📝",
     },
     image: Jee11,
-    detailsPDF: '/docs/neet-foundation-batch.pdf',
+    detailsPDF: Mole_Batch_pdf,
   },
 ];
 
