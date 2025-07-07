@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import FloatingActions from '../components/FloatingActions';
 import { Eye, EyeOff } from "lucide-react";
+import { BASE_URL } from '../config';
 
 export default function Signup() {
   const [formData, setFormData] = useState({
@@ -27,7 +28,7 @@ export default function Signup() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:2707/signup')
+    axios.get(`${BASE_URL}/signup`)
       .then((res) => {
         setStreams(res.data.streams || []);
         setClasses(res.data.classes || []);
@@ -46,7 +47,7 @@ export default function Signup() {
     setOtpLoading(true);
     setMessage("Sending OTP...");
     try {
-      await axios.post("http://localhost:2707/send-otp", {
+      await axios.post(`${BASE_URL}/send-otp`, {
         emailId: formData.emailId,
       });
       setOtpSent(true);
@@ -60,7 +61,7 @@ export default function Signup() {
 
   const handleVerifyOtp = async () => {
     try {
-      await axios.post("http://localhost:2707/verify-otp", {
+      await axios.post(`${BASE_URL}/verify-otp`, {
         emailId: formData.emailId,
         otp,
       });
@@ -81,7 +82,7 @@ export default function Signup() {
     }
 
     try {
-      await axios.post("http://localhost:2707/signup", formData);
+      await axios.post(`${BASE_URL}/signup`, formData);
 
       setFormData({
         fullName: '',

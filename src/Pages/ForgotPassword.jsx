@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { BASE_URL } from "../config";
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState('');
@@ -8,7 +9,7 @@ export default function ForgotPassword() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:2707/auth/forgot-password', { email });
+      await axios.post(`${BASE_URL}/auth/forgot-password`, { email });
       setMessage('✅ Reset link sent to your email!');
     } catch (err) {
       console.error(err);

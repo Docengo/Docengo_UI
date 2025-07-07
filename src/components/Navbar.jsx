@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import logo from '../assets/logo.png'; // Adjust the path as necessary
+import { BASE_URL } from '../config';
 
 export default function Navbar() {
   const [user, setUser] = useState(null);
@@ -10,14 +11,14 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:2707/user", { withCredentials: true })
+    axios.get(`${BASE_URL}/user`, { withCredentials: true })
       .then(res => setUser(res.data))
       .catch(console.error);
   }, []);
 
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:2707/logout", {}, { withCredentials: true });
+      await axios.post(`${BASE_URL}/logout`, {}, { withCredentials: true });
       navigate("/login");
     } catch (err) {
       console.error("Logout failed", err);

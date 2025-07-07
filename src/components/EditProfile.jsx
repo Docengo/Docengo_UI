@@ -3,6 +3,7 @@ import axios from "axios";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import { BASE_URL } from "../config";
 
 export default function EditProfile() {
   const [user, setUser] = useState(null);
@@ -21,7 +22,7 @@ export default function EditProfile() {
   // Fetch existing profile
   useEffect(() => {
     axios
-      .get("http://localhost:2707/profile/view", { withCredentials: true })
+      .get(`${BASE_URL}/profile/view`, { withCredentials: true })
       .then((res) => {
         setUser(res.data);
         setFormData({
@@ -60,7 +61,7 @@ export default function EditProfile() {
     }
 
     try {
-      const res = await axios.patch("http://localhost:2707/profile/edit", payload, {
+      const res = await axios.patch(`${BASE_URL}/profile/edit`, payload, {
         withCredentials: true,
         headers: { "Content-Type": "multipart/form-data" },
       });

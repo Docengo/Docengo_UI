@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import help_image from "../assets/help_image.jpg";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import FloatingActions from "../components/FloatingActions";
+import { BASE_URL } from "../config";
 
 
 export default function Help() {
@@ -27,7 +28,7 @@ export default function Help() {
     setMessage(""); // Clear previous message
 
     try {
-      const res = await axios.post("http://localhost:2707/help/submit", formData , {
+      const res = await axios.post(`${BASE_URL}/help/submit`, formData , {
         withCredentials: true,
         });
       setMessage("✅ Help request submitted successfully!");

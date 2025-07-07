@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar"; // Adjust if needed
+import { BASE_URL } from "../config";
 
 export default function AllHelp() {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -12,7 +13,7 @@ export default function AllHelp() {
 
   const fetchFeedbacks = async () => {
     try {
-      const res = await axios.get("http://localhost:2707/feedback/allFeedbacks", {
+      const res = await axios.get(`${BASE_URL}/feedback/allFeedbacks`, {
         withCredentials: true,
       });
       setFeedbacks(res.data);

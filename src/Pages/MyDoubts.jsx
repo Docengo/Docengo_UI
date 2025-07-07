@@ -3,6 +3,7 @@ import axios from "axios";
 import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { BASE_URL } from "../config";
 
 export default function MyDoubts() {
   const [doubts, setDoubts] = useState([]);
@@ -13,7 +14,7 @@ export default function MyDoubts() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:2707/doubt/myDoubts", { withCredentials: true })
+      .get(`${BASE_URL}/doubt/myDoubts`, { withCredentials: true })
       .then((res) => {
         setDoubts(res.data);
         setLoading(false);
@@ -30,7 +31,7 @@ export default function MyDoubts() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:2707/doubt/delete/${selectedId}`, {
+      await axios.delete(`${BASE_URL}/doubt/delete/${selectedId}`, {
         withCredentials: true,
       });
       setDoubts((prev) => prev.filter((d) => d._id !== selectedId));

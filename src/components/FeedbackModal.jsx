@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import axios from "axios";
+import { BASE_URL } from "../config";
 
 export default function FeedbackModal({ onClose }) {
   const [formData, setFormData] = useState({
@@ -29,7 +30,7 @@ export default function FeedbackModal({ onClose }) {
   e.preventDefault();
   setMessage("");
   try {
-    await axios.post("http://localhost:2707/feedback/submit", formData);
+    await axios.post(`${BASE_URL}/feedback/submit`, formData);
     setMessage("✅ Feedback submitted successfully!");
     setFormData({ name: "", message: "", rating: 0 });
     setTimeout(() => setMessage(""), 3000);

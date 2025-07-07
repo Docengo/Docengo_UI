@@ -4,6 +4,7 @@ import axios from "axios";
 import Navbar from "../components/Navbar";
 import { FaCity, FaGraduationCap, FaPhoneAlt, FaStream } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { BASE_URL } from '../config';
 
 export default function UserProfile() {
   const [user, setUser] = useState(null);
@@ -12,7 +13,7 @@ export default function UserProfile() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:2707/profile/view", {
+      .get(`${BASE_URL}/profile/view`, {
         withCredentials: true,
       })
       .then((res) => setUser(res.data))

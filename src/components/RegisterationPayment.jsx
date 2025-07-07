@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import QRCodeImage from "../assets/QRCodeImage.jpeg";
 import Navbar from "../components/Navbar";
 import axios from "axios";
+import { BASE_URL } from "../config";
 
 export default function RegistrationPayment() {
   const [formData, setFormData] = useState({
@@ -26,7 +27,7 @@ export default function RegistrationPayment() {
 
     try {
       const response = await axios.post(
-        "http://localhost:2707/payment/submit",
+        `${BASE_URL}/payment/submit`,
         formData,
         {
           withCredentials: true // 🔐 important for sending cookies

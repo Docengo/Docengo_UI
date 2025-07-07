@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar"; // Adjust if needed
+import { BASE_URL } from "../config";
 
 export default function AllHelp() {
   const [helpMessages, setHelpMessages] = useState([]);
@@ -12,7 +13,7 @@ export default function AllHelp() {
 
   const fetchHelpMessages = async () => {
     try {
-      const res = await axios.get("http://localhost:2707/help/allHelp", {
+      const res = await axios.get(`${BASE_URL}/help/allHelp`, {
         withCredentials: true,
       });
       setHelpMessages(res.data);

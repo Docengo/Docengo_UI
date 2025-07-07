@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
 import FloatingActions from '../components/FloatingActions';
+import { BASE_URL } from "../config";
 
 export default function DoubtSupport() {
   const [formData, setFormData] = useState({
@@ -21,7 +22,7 @@ export default function DoubtSupport() {
     setMessage('');
 
     try {
-      await axios.post('http://localhost:2707/doubt/submit', formData, {
+      await axios.post(`${BASE_URL}/doubt/submit`, formData, {
         withCredentials: true,
         headers: {
           'Content-Type': 'application/json',

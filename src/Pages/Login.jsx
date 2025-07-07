@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import FloatingActions from '../components/FloatingActions';
 import { Eye, EyeOff } from "lucide-react";
+import { BASE_URL } from '../config';
 
 export default function LoginForm() {
   const [formData, setFormData] = useState({
@@ -27,7 +28,7 @@ export default function LoginForm() {
     setMessage('');
 
     try {
-      const response = await axios.post('http://localhost:2707/login', formData, {
+      const response = await axios.post(`${BASE_URL}/login`, formData, {
         withCredentials: true,
       });
 
@@ -35,6 +36,7 @@ export default function LoginForm() {
       setMessage(`✅ ${msg}`);
 
       setTimeout(() => {
+        console.log("Navigating to /body...");
         navigate('/body');
       }, 1500);
 

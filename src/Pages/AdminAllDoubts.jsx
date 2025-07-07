@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar";
+import { BASE_URL } from "../config";
 
 export default function AdminAllDoubts() {
   const [doubts, setDoubts] = useState([]);
@@ -15,7 +16,7 @@ export default function AdminAllDoubts() {
 
   const fetchDoubts = async () => {
     try {
-      const res = await axios.get("http://localhost:2707/doubt/allDoubts", {
+      const res = await axios.get(`${BASE_URL}/doubt/allDoubts`, {
         withCredentials: true,
       });
       setDoubts(res.data);
@@ -47,7 +48,7 @@ export default function AdminAllDoubts() {
 
   try {
     await axios.patch(
-      `http://localhost:2707/doubt/answer/${id}`,
+      `${BASE_URL}/doubt/answer/${id}`,
       { answer },
       { withCredentials: true }
     );
@@ -115,7 +116,7 @@ export default function AdminAllDoubts() {
 
             {doubt.attachment && (
               <a
-                href={`http://localhost:2707/${doubt.attachment}`}
+                href={`${BASE_URL}/${doubt.attachment}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 underline"
