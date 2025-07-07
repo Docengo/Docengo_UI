@@ -23,8 +23,9 @@ import OtherExamsPage from "./Pages/OtherExamsPage"
 import AllHelp from "./Pages/AllHelp"
 import AllFeedbacks from "./Pages/AllFeedbacks"
 import NeetBatches from "./components/NeetBatches";
+import Batches from "./Pages/Batches.jsx"
 import JeeBatches from "./components/JeeBatches";
-import Batches from "./Pages/BAtches";
+
 import RegistrationPayment from "./components/RegisterationPayment";
 import { Toaster } from "react-hot-toast";
 
