@@ -2,6 +2,7 @@ import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import AboutImage from '../assets/About.png';
 import Navbar from '../components/Navbar';
+import { Link } from 'react-router-dom';
 import FloatingActions from '../components/FloatingActions';
 
 function About() {
@@ -44,9 +45,11 @@ function About() {
             NEET, JEE, or any goal — we’ve got your back with real mentors and resources that deliver.
           </p>
 
+          <Link to ="/batches">
           <button className="mt-10 bg-gradient-to-r border-[1px] border-white from-[#fca311] to-[#14213D] text-white font-semibold px-8 py-3 rounded-full shadow-lg transition duration-300">
             Explore the Docengo Way 🚀
           </button>
+          </Link>
         </div>
 
         {/* Right Image with Rounded Corners */}

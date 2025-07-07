@@ -103,6 +103,14 @@ export default function Navbar() {
                 All Doubts
               </Link>
             )}
+             {user?.isAdmin && (
+              <Link
+                to="/allFeedbacks"
+                className="px-4 py-2 text-left text-white hover:bg-[#FCA311]/20 font-semibold border-t border-[#FCA311]"
+              >
+                All Feedbacks
+              </Link>
+            )}
             <Link
               to="/myProfile"
               className="px-4 py-2 text-left text-white hover:bg-[#FCA311]/20 font-semibold border-t border-[#FCA311]"

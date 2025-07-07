@@ -85,6 +85,11 @@ export default function MyDoubts() {
                   </p>
                 </div>
 
+                 <p className="text-xs text-gray-300 text-right pt-2">
+                Submitted: {new Date(doubt.createdAt).toLocaleString()}
+                </p>
+
+
                 {/* Delete Button (only if within 1 hour) */}
                 {isDeletable(doubt.createdAt) && (
                   <button

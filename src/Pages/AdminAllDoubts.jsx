@@ -143,6 +143,10 @@ export default function AdminAllDoubts() {
                 </p>
                 )}
 
+                <p className="text-xs text-gray-500 text-right">
+                Submitted: {new Date(doubt.createdAt).toLocaleString()}
+                </p>
+
                 
 
               <button

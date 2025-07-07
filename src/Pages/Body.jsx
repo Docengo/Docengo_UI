@@ -11,6 +11,7 @@ import Footer from '../components/Footer';
 import FloatingActions from '../components/FloatingActions';
 import Highlights from '../components/Highlights';
 import FloatingFeedback from "../components/FloatingFeedback";
+import { Link } from 'react-router-dom';
 
 
 
@@ -58,9 +59,11 @@ function Body() {
             <p className="text-lg text-gray-600 mt-4">
               Real learning. Real mentors. Real results — That’s Docengo.
             </p>
+            <Link to="/batches">
             <button className="mt-6 bg-gradient-to-r from-red-500 to-[#14213d] hover:opacity-90 text-white font-semibold px-6 py-3 rounded-xl shadow-md">
-  Unlock Docengo 🔓
-</button>
+              Unlock Docengo 🔓
+            </button>
+            </Link>
 
 
           </div>

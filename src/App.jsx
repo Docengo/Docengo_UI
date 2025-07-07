@@ -21,6 +21,10 @@ import EditProfile from "./components/EditProfile";
 import NetworkStatus from "./components/NetworkStatus"
 import OtherExamsPage from "./Pages/OtherExamsPage"
 import AllHelp from "./Pages/AllHelp"
+import AllFeedbacks from "./Pages/AllFeedbacks"
+import NeetBatches from "./components/NeetBatches";
+import JeeBatches from "./components/JeeBatches";
+import Batches from "./Pages/BAtches";
 import { Toaster } from "react-hot-toast";
 
 export default function App() {
@@ -49,8 +53,12 @@ export default function App() {
       <Route path="/footer" element={<Footer />} />
       <Route path="/myProfile" element={<UserProfile />} />
       <Route path="/editProfile" element={<EditProfile />} />
-      <Route path="/other-exams" element={<OtherExamsPage/>}/>
+      <Route path="/neet-batches" element={<NeetBatches />} />
+      <Route path="/jee-batches" element={<JeeBatches />} />
+      <Route path="/other-exams" element={<OtherExamsPage/>} />
       <Route path="/allHelp" element={<AllHelp/>}/>
+      <Route path="/allFeedbacks" element={<AllFeedbacks/>}/>
+      <Route path="/batches" element={<Batches/>}/>
       
     </Route>
   </Routes>

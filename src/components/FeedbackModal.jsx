@@ -1,6 +1,7 @@
 // src/components/FeedbackModal.jsx
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
+import axios from "axios";
 
 export default function FeedbackModal({ onClose }) {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ export default function FeedbackModal({ onClose }) {
     message: "",
     rating: 0,
   });
+  const [message, setMessage] = useState("");
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -23,13 +25,23 @@ export default function FeedbackModal({ onClose }) {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Feedback submitted:", formData);
-    alert("✅ Thank you for your feedback!");
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setMessage("");
+  try {
+    await axios.post("http://localhost:2707/feedback/submit", formData);
+    setMessage("✅ Feedback submitted successfully!");
     setFormData({ name: "", message: "", rating: 0 });
-    onClose();
-  };
+    setTimeout(() => setMessage(""), 3000);
+    setTimeout(() => onClose(), 4000);
+    
+  } catch (err) {
+    console.error("Failed to submit feedback:", err);
+    setMessage("❌ Failed to submit Feedback.");
+    setTimeout(() => setMessage(""), 3000);
+  }
+};
+
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -80,6 +92,12 @@ export default function FeedbackModal({ onClose }) {
                 ))}
               </div>
             </div>
+
+             {message && (
+                <p className="text-center mt-3 text-[#FCA311] font-semibold pb-2">
+                  {message}
+                </p>
+              )}
 
             {/* Submit */}
             <button

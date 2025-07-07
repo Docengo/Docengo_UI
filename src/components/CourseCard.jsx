@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom';
 
 function CourseCard({ title, image }) {
+  // Determine route based on title
+  let route = '';
+  if (title === 'NEET Courses') route = '/neet-batches';
+  else if (title === 'JEE Courses') route = '/jee-batches';
+  else if (title === 'Other Exams') route = '/other-exams';
+
   return (
     <div className="bg-[#131827] text-white p-6 rounded-2xl shadow-lg shadow-slate-500 hover:scale-[1.03] transition-transform duration-300">
       {/* Title */}
@@ -16,14 +22,14 @@ function CourseCard({ title, image }) {
       <div className="flex justify-center gap-5 mb-4">
         {title === 'Other Exams' ? (
           <Link
-            to="/other-exams"
+            to={route}
             className="border-[1px] bg-[#FCA311] border-white text-sm font-semibold text-[#14213D] hover:bg-white hover:text-red-500 hover:scale-[1.08] hover:font-bold py-2 px-6 rounded-3xl shadow transition"
           >
             More Courses
           </Link>
         ) : (
-         
-           <button
+          <Link to={route}>
+            <button
               className="group text-[#FCA311] text-md font-semibold hover:scale-[1.08] hover:font-bold py-2 px-4 rounded-3xl shadow transition"
             >
               <span className="underline underline-offset-2 hover:text-red-600">Explore Batches</span>{" "}
@@ -31,8 +37,7 @@ function CourseCard({ title, image }) {
                 →
               </span>
             </button>
-            
-         
+          </Link>
         )}
       </div>
     </div>

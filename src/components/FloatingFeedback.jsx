@@ -5,6 +5,9 @@ import feedbackIcon from "../assets/feedback.png";
 export default function FloatingFeedback() {
   const [showModal, setShowModal] = useState(false);
 
+ 
+
+
   return (
     <>
       <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-4">
