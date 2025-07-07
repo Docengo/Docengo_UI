@@ -5,6 +5,7 @@ import BBP from "../assets/BBP.png";
 import { FiPhoneCall } from 'react-icons/fi';
 import { div } from 'framer-motion/client';
 import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
 
 const batches = [
   {
@@ -117,9 +118,11 @@ const NeetBatches = () => {
 
               {/* Buttons */}
               <div className="mt-4 flex flex-wrap gap-3">
+                <Link to="/register-payment">
                 <button className="bg-[#FCA311] text-white font-semibold px-4 py-1.5 rounded-full hover:bg-[#e89900] transition">
                   Pay Registration Fee
                 </button>
+                </Link>
                 <button
                   className="border border-[#FCA311] text-[#FCA311] font-semibold px-4 py-1.5 rounded-full hover:bg-[#FCA311] hover:text-white transition"
                   onClick={handleCallBackClick}

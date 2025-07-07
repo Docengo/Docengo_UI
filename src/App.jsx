@@ -25,6 +25,7 @@ import AllFeedbacks from "./Pages/AllFeedbacks"
 import NeetBatches from "./components/NeetBatches";
 import JeeBatches from "./components/JeeBatches";
 import Batches from "./Pages/BAtches";
+import RegistrationPayment from "./components/RegisterationPayment";
 import { Toaster } from "react-hot-toast";
 
 export default function App() {
@@ -59,6 +60,7 @@ export default function App() {
       <Route path="/allHelp" element={<AllHelp/>}/>
       <Route path="/allFeedbacks" element={<AllFeedbacks/>}/>
       <Route path="/batches" element={<Batches/>}/>
+      <Route path="/register-payment" element={<RegistrationPayment/>}/>
       
     </Route>
   </Routes>

@@ -16,9 +16,9 @@ export default function DoubtSupport() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-  };
+  // const handleFileChange = (e) => {
+  //   setFile(e.target.files[0]);
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -83,7 +83,7 @@ export default function DoubtSupport() {
 
           <textarea
             name="question"
-            placeholder="Describe your doubt..."
+            placeholder="Describe your doubt... [You can also share the google drive public URL of media]"
             value={formData.question}
             onChange={handleChange}
             required
@@ -91,7 +91,7 @@ export default function DoubtSupport() {
             className="w-full mb-4 px-4 py-2 rounded border border-gray-300 bg-[#E5E5E5] focus:outline-none"
           ></textarea>
 
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700 mb-1">Attach Image or PDF</label>
             <input
               type="file"
@@ -99,7 +99,7 @@ export default function DoubtSupport() {
               onChange={handleFileChange}
               className="w-full text-sm"
             />
-          </div>
+          </div> */}
 
           {message && (
             <p className="text-center text-base font-semibold text-[#FCA311] mb-4 animate-pulse">
