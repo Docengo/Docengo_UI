@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import { FaCity, FaGraduationCap, FaPhoneAlt, FaStream } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { BASE_URL } from '../config';
+import { ClipLoader } from "react-spinners";
 
 export default function UserProfile() {
   const [user, setUser] = useState(null);
@@ -33,9 +34,9 @@ export default function UserProfile() {
 
   if (!user) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#14213D] text-white">
-        <p>Loading profile...</p>
-      </div>
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#0f172a]">
+      <ClipLoader color="#FCA311" size={60} />
+    </div>
     );
   }
 
