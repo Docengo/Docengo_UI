@@ -95,7 +95,7 @@ export default function Navbar() {
             </div>
 
             {
-              !user (
+              !user && (
                 <Link to="/signup" className="px-4 py-2 hover:bg-[#FCA311]/20">Sign up</Link>
               )
             }
