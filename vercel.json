@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/signup",
+      "destination": "/body",
       "permanent": true
     }
   ],
