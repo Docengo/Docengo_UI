@@ -43,8 +43,7 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // ✅ Wait until auth check completes to avoid flickering
-  if (isAuthenticated === null) return null;
+
 
   return (
     <nav className="bg-[#14213D] text-white flex fixed top-0 items-center justify-between z-[999] px-[22px] py-3 shadow-md shadow-[#908e8e] w-full">
@@ -73,9 +72,7 @@ export default function Navbar() {
           Help
         </Link>
 
-        {isAuthenticated === false && (
-          <Link to="/signup" className="hover:text-[#FCA311] font-medium">Sign up</Link>
-        )}
+        
       </div>
 
       {/* Profile */}
