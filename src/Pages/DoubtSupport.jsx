@@ -35,7 +35,12 @@ export default function DoubtSupport() {
       setFormData({ subject: '', topic: '', question: '' });
     } catch (err) {
       console.error(err);
-      setMessage('❌ Failed to submit doubt. Try again.');
+       if (err.response?.status === 401) {
+        setMessage('Please Log in');
+      } else {
+        setMessage('❌ Failed to submit doubt. Try again.');
+      }
+
       setTimeout(() => setMessage(''), 3000);
     }
   };

@@ -44,7 +44,13 @@ export default function Help() {
       setTimeout(() => setMessage(""), 3000);
     } catch (err) {
       console.error(err);
-      setMessage("❌ Failed to submit help request.");
+      if(err.response.status === 401){
+        setMessage("Please Log in 🔒");
+      }
+      else{
+        setMessage("❌ Failed to submit help request.");
+      }
+      
       setTimeout(() => setMessage(""), 3000);
     }
   };

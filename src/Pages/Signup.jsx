@@ -19,10 +19,11 @@ export default function Signup() {
   const [otp, setOtp] = useState('');
   const [otpSent, setOtpSent] = useState(false);
   const [otpVerified, setOtpVerified] = useState(false);
-  const [otpLoading, setOtpLoading] = useState(false); // ✅ OTP loading state
+  const [otpLoading, setOtpLoading] = useState(false);
   const [streams, setStreams] = useState([]);
   const [classes, setClasses] = useState([]);
   const [message, setMessage] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
@@ -41,6 +42,9 @@ export default function Signup() {
       ...prev,
       [e.target.name]: e.target.value
     }));
+    if (e.target.name === "password") {
+      setPasswordError('');
+    }
   };
 
   const handleSendOtp = async () => {
@@ -75,6 +79,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
+    setPasswordError("");
 
     if (!otpVerified) {
       setMessage("⚠️ Please verify OTP first.");
@@ -102,10 +107,16 @@ export default function Signup() {
         navigate("/body");
       }, 1500);
     } catch (err) {
-      console.error("Signup Error:", err.response?.data);
-      const errorMsg = err.response?.data || "❌ Signup failed. Try again.";
-      setMessage(errorMsg);
-    }
+  console.log("Signup error:", err?.response?.data); // 👈 for debugging
+
+  const errorMsg = err?.response?.data?.error || "❌ Signup failed. Try again.";
+
+  if (errorMsg === "YOU ARE IDIOT") {
+    setPasswordError(errorMsg);
+  } else {
+    setMessage(errorMsg);
+  }
+}
   };
 
   return (
@@ -117,7 +128,6 @@ export default function Signup() {
         <h2 className="text-2xl font-bold text-[#000000] mb-6 text-center">Sign Up</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Full Name */}
           <input
             type="text"
             name="fullName"
@@ -127,7 +137,6 @@ export default function Signup() {
             className="w-full max-w-[320px] px-4 py-2 rounded-md border border-gray-300 bg-[#E5E5E5] focus:outline-none mx-auto"
             required
           />
-          {/* City */}
           <input
             type="text"
             name="city"
@@ -137,7 +146,6 @@ export default function Signup() {
             className="w-full max-w-[320px] px-4 py-2 rounded-md border border-gray-300 bg-[#E5E5E5] focus:outline-none mx-auto"
             required
           />
-          {/* Email */}
           <input
             type="email"
             name="emailId"
@@ -147,7 +155,6 @@ export default function Signup() {
             className="w-full max-w-[320px] px-4 py-2 rounded-md border border-gray-300 bg-[#E5E5E5] focus:outline-none mx-auto"
             required
           />
-          {/* Mobile */}
           <input
             type="text"
             name="mobileNumber"
@@ -157,7 +164,6 @@ export default function Signup() {
             className="w-full max-w-[320px] px-4 py-2 rounded-md border border-gray-300 bg-[#E5E5E5] focus:outline-none mx-auto"
             required
           />
-          {/* Stream */}
           <select
             name="stream"
             value={formData.stream}
@@ -170,7 +176,6 @@ export default function Signup() {
               <option className='text-black' key={idx} value={stream}>{stream}</option>
             ))}
           </select>
-          {/* Class */}
           <select
             name="className"
             value={formData.className}
@@ -183,7 +188,8 @@ export default function Signup() {
               <option className='text-black' key={idx} value={cls}>{cls}</option>
             ))}
           </select>
-          {/* Password */}
+
+          {/* Password Field + Error */}
           <div className="relative w-full max-w-[660px] mx-auto md:col-span-2">
             <input
               type={showPassword ? "text" : "password"}
@@ -204,6 +210,9 @@ export default function Signup() {
                 <EyeOff className="h-5 w-5 text-gray-600" />
               )}
             </div>
+            {passwordError && (
+  <p className="text-red-600 text-sm mt-1">{passwordError}</p>
+)}
           </div>
         </div>
 

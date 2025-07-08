@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProtectedLayout from "./components/ProtectedLayout"
-import PublicRoute from "./components/PublicRoute";
+
 
 // Public
 import Signup from "./Pages/Signup";
@@ -37,32 +37,31 @@ export default function App() {
   <NetworkStatus />
   <Routes>
     {/* Public routes */}
-    <Route element={<PublicRoute/>}>
+    
     <Route path="/signup" element={<Signup />} />
     <Route path="/login" element={<Login />} />
-    </Route>
+    <Route path="/body" element={<Body />} />
+    <Route path="/doubt" element={<DoubtSupport />} />
+    <Route path="/testSeries" element={<TestSeries />} />
+    <Route path="/docengoNotes" element={<Notes />} />
+    <Route path="/help" element={<Help />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/footer" element={<Footer />} />
+    <Route path="/neet-batches" element={<NeetBatches />} />
+    <Route path="/jee-batches" element={<JeeBatches />} />
+    <Route path="/other-exams" element={<OtherExamsPage/>} />
+    <Route path="/batches" element={<Batches/>}/>
+    
 
     {/* Protected routes */}
     <Route element={<ProtectedLayout />}>
-      <Route path="/body" element={<Body />} />
-      <Route path="/doubt" element={<DoubtSupport />} />
       <Route path="/myDoubts" element={<MyDoubts />} />
       <Route path="/allDoubts" element={<AdminAllDoubts />} />
-      <Route path="/testSeries" element={<TestSeries />} />
-      <Route path="/docengoNotes" element={<Notes />} />
-      <Route path="/help" element={<Help />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/footer" element={<Footer />} />
       <Route path="/myProfile" element={<UserProfile />} />
       <Route path="/editProfile" element={<EditProfile />} />
-      <Route path="/neet-batches" element={<NeetBatches />} />
-      <Route path="/jee-batches" element={<JeeBatches />} />
-      <Route path="/other-exams" element={<OtherExamsPage/>} />
       <Route path="/allHelp" element={<AllHelp/>}/>
       <Route path="/allFeedbacks" element={<AllFeedbacks/>}/>
-      <Route path="/batches" element={<Batches/>}/>
       <Route path="/register-payment" element={<RegistrationPayment/>}/>
-      
     </Route>
   </Routes>
 </BrowserRouter>

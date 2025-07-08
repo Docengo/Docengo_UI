@@ -89,10 +89,7 @@ export default function LoginForm() {
           </div>
         </div>
 
-        {/* Forgot Password link */}
-        <div className="text-right text-sm text-blue-600 hover:underline mb-2">
-          <Link to="/forgot-password">Forgot Password?</Link>
-        </div>
+       
 
         {message && (
           <p className="text-center text-base font-semibold text-[#FCA311] mt-2 animate-pulse tracking-wide">
