@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { BASE_URL } from "../config";
+import { ClipLoader } from "react-spinners";
 
 export default function MyDoubts() {
   const [doubts, setDoubts] = useState([]);
@@ -60,7 +61,9 @@ export default function MyDoubts() {
         </h2>
 
         {loading ? (
-          <p className="text-center text-gray-200 animate-pulse">⏳ Loading your doubts...</p>
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#0f172a]">
+      <ClipLoader color="#FCA311" size={60} />
+    </div>
         ) : doubts.length === 0 ? (
           <p className="text-center text-gray-400">🙁 You haven’t submitted any doubts yet.</p>
         ) : (
