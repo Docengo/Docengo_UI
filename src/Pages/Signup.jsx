@@ -87,7 +87,9 @@ export default function Signup() {
     }
 
     try {
-      await axios.post(`${BASE_URL}/signup`, formData);
+      await axios.post(`${BASE_URL}/signup`, formData, {
+        withCredentials:true
+      });
 
       setFormData({
         fullName: '',
