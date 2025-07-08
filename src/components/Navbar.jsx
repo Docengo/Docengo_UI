@@ -19,6 +19,8 @@ export default function Navbar() {
         .get(`${BASE_URL}/user`, { withCredentials: true })
         .then((res) => setUser(res.data))
         .catch(() => setUser(null));
+    } else {
+      setUser(null); // logout case
     }
   }, [isAuthenticated]);
 
@@ -31,7 +33,6 @@ export default function Navbar() {
     }
   };
 
-  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -41,6 +42,9 @@ export default function Navbar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  // ✅ Wait until auth check completes to avoid flickering
+  if (isAuthenticated === null) return null;
 
   return (
     <nav className="bg-[#14213D] text-white flex fixed top-0 items-center justify-between z-[999] px-[22px] py-3 shadow-md shadow-[#908e8e] w-full">
@@ -55,7 +59,7 @@ export default function Navbar() {
         </div>
       </Link>
 
-      {/* Nav Links (hidden on screen <= 1248px) */}
+      {/* Nav Links */}
       <div className="hidden custom:hidden md:flex space-x-6">
         <Link to="/batches" className="hover:text-[#FCA311] font-medium">Batches</Link>
         <Link to="/docengoNotes" className="hover:text-[#FCA311] font-medium">Docengo Notes</Link>
@@ -69,12 +73,12 @@ export default function Navbar() {
           Help
         </Link>
 
-        {isAuthenticated !== null && !isAuthenticated && (
+        {isAuthenticated === false && (
           <Link to="/signup" className="hover:text-[#FCA311] font-medium">Sign up</Link>
         )}
       </div>
 
-      {/* Profile Image */}
+      {/* Profile */}
       <div className="relative pr-[3px]" ref={dropdownRef}>
         <img
           src={
@@ -103,7 +107,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {isAuthenticated !== null && !isAuthenticated && (
+            {isAuthenticated === false && (
               <Link to="/signup" className="px-4 py-2 hover:bg-[#FCA311]/20">Sign up</Link>
             )}
 
@@ -133,21 +137,21 @@ export default function Navbar() {
               </>
             )}
 
-            {user  && (
+            {user && (
               <>
-            <Link
-              to="/myProfile"
-              className="px-4 py-2 text-left text-white hover:bg-[#FCA311]/20 font-semibold border-t border-[#FCA311]"
-            >
-              My Profile
-            </Link>
-            <button
-              onClick={handleLogout}
-              className="px-4 py-2 text-left text-red-300 hover:bg-red-600/20 font-semibold border-t border-[#FCA311]"
-            >
-              Logout
-            </button>
-            </>
+                <Link
+                  to="/myProfile"
+                  className="px-4 py-2 text-left text-white hover:bg-[#FCA311]/20 font-semibold border-t border-[#FCA311]"
+                >
+                  My Profile
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="px-4 py-2 text-left text-red-300 hover:bg-red-600/20 font-semibold border-t border-[#FCA311]"
+                >
+                  Logout
+                </button>
+              </>
             )}
           </div>
         )}
