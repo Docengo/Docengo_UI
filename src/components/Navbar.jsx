@@ -59,7 +59,14 @@ export default function Navbar() {
           >
           Help
         </Link>
+          {
+              !user && (
+                <Link to="/signup" className="hover:text-[#FCA311] font-medium">Sign up</Link>
+              )
+            }
       </div>
+
+     
 
       {/* Profile Image */}
       <div className="relative pr-[3px]" ref={dropdownRef}>
@@ -86,6 +93,13 @@ export default function Navbar() {
                   Help
                 </Link>
             </div>
+
+            {
+              !user (
+                <Link to="/signup" className="px-4 py-2 hover:bg-[#FCA311]/20">Sign up</Link>
+              )
+            }
+            
 
             {user && !user.isAdmin &&  (
              <Link
