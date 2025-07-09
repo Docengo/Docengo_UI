@@ -98,7 +98,7 @@ export default function Navbar() {
               <Link to="/about" className="px-4 py-2 hover:bg-[#FCA311]/20">About Us</Link>
               <Link
                 to={user?.isAdmin ? "/allHelp" : "/help"}
-                className="hover:text-[#FCA311] font-medium"
+                className="px-4 py-2 hover:bg-[#FCA311]/20"
               >
                 Help
               </Link>
