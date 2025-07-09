@@ -16,9 +16,9 @@ import Banner3 from '../assets/Banner3.png';
 import Banner4 from '../assets/Banner4.png';
 
 
-const banners = [Banner1, Banner2, Banner3, Banner4];
+  const banners = [Banner1, Banner2, Banner3, Banner4];
 
-function Body() {
+ function Body() {
   const [currentBanner, setCurrentBanner] = useState(0);
 
   useEffect(() => {
@@ -32,10 +32,10 @@ function Body() {
     <div>
       <Navbar />
 
-      {/* Top Banner Section */}
-      <div className="w-full ">
-        {/* Rotating Banner */}
-        <div className="relative w-full h-[225px] mt-[4rem] overflow-hidden">
+      {/* Responsive Banner */}
+      <div className="w-full mt-[4rem] relative overflow-hidden">
+        {/* Maintain 1900x300 ratio = 6.33:1 => Use padding-bottom trick */}
+        <div className="relative w-full aspect-[19/3] sm:aspect-[19/3] md:h-[180px] lg:h-[225px] xl:h-[225px] overflow-hidden">
           <AnimatePresence mode="sync">
             <motion.img
               key={currentBanner}
