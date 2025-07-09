@@ -48,7 +48,7 @@ export default function UserProfile() {
     <div className="relative">
       <Navbar />
 
-      <div className="min-h-screen bg-[#14213D] pt-[7rem] px-4 flex justify-center items-start">
+      <div className="min-h-screen bg-[#14213D] pt-[7rem] px-4 flex justify-center items-start pb-[6rem]">
         <div className="bg-[#131827] text-[#14213D] rounded-3xl shadow-lg max-w-3xl w-full p-10">
 
           {/* Header */}

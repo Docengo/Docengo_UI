@@ -78,7 +78,7 @@ export default function RegistrationPayment() {
             </div>
 
             <p className="text-sm mb-2">
-              UPI ID: <span className="font-semibold">docengo@upi</span>
+              UPI ID: <span className="font-semibold">gaganharsh5@ybl</span>
             </p>
 
             <form className="mt-4 space-y-3" onSubmit={handleSubmit}>

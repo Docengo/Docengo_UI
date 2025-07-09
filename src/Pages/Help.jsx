@@ -1,11 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
-import Navbar from "../components/Navbar"; 
+import Navbar from "../components/Navbar";
 import help_image from "../assets/help_image.jpg";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import FloatingActions from "../components/FloatingActions";
 import { BASE_URL } from "../config";
-
 
 export default function Help() {
   const [formData, setFormData] = useState({
@@ -25,12 +24,12 @@ export default function Help() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage(""); // Clear previous message
+    setMessage("");
 
     try {
-      const res = await axios.post(`${BASE_URL}/help/submit`, formData , {
+      const res = await axios.post(`${BASE_URL}/help/submit`, formData, {
         withCredentials: true,
-        });
+      });
       setMessage("✅ Help request submitted successfully!");
       setFormData({
         firstName: "",
@@ -44,13 +43,12 @@ export default function Help() {
       setTimeout(() => setMessage(""), 3000);
     } catch (err) {
       console.error(err);
-      if(err.response.status === 401){
+      if (err.response?.status === 401) {
         setMessage("Please Log in 🔒");
-      }
-      else{
+      } else {
         setMessage("❌ Failed to submit help request.");
       }
-      
+
       setTimeout(() => setMessage(""), 3000);
     }
   };
@@ -58,23 +56,23 @@ export default function Help() {
   return (
     <div>
       <Navbar />
-      <div className="min-h-screen bg-[#14213D] flex flex-col items-center justify-center pt-[6rem] pb-[4rem] px-4">
-        <h2 className="text-3xl font-extrabold text-[#fca311] text-center mb-[2.5rem]">
+      <div className="min-h-screen bg-[#14213D] pt-[6rem] pb-[4rem] px-4 flex flex-col items-center">
+        <h2 className="text-3xl font-extrabold text-[#fca311] text-center mb-10">
           Need Some Help?
         </h2>
 
-        <div className="shadow-lg shadow-slate-500 pl-8 rounded-2xl flex flex-col gap-[4rem] lg:flex-row items-center max-w-6xl w-full overflow-hidden hover:scale-[1.03] transition-transform duration-300">
+        <div className="shadow-lg shadow-slate-500 rounded-2xl flex flex-col lg:flex-row gap-10 items-center max-w-6xl w-full overflow-hidden hover:scale-[1.03] transition-transform duration-300 bg-white/5 px-4 py-6">
           {/* Left Image */}
           <div className="w-full lg:w-1/2 flex justify-center">
             <img
               src={help_image}
               alt="Help Illustration"
-              className="w-[35rem] rounded"
+              className="w-full max-w-[32rem] rounded"
             />
           </div>
 
           {/* Right Form */}
-          <div className="w-full lg:w-1/2 p-8 mt-8 pl-2">
+          <div className="w-full lg:w-1/2 px-2 md:px-4">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="flex flex-col md:flex-row gap-4">
                 <input
@@ -84,7 +82,7 @@ export default function Help() {
                   value={formData.firstName}
                   onChange={handleChange}
                   required
-                  className="flex-1 px-4 py-2 rounded border border-gray-300 bg-[#F8F9FA] focus:outline-none"
+                  className="flex-1 px-4 py-2 rounded border border-gray-300 bg-[#F8F9FA] focus:outline-none text-sm"
                 />
                 <input
                   name="lastName"
@@ -93,7 +91,7 @@ export default function Help() {
                   value={formData.lastName}
                   onChange={handleChange}
                   required
-                  className="flex-1 px-4 py-2 rounded border border-gray-300 bg-[#F8F9FA] focus:outline-none"
+                  className="flex-1 px-4 py-2 rounded border border-gray-300 bg-[#F8F9FA] focus:outline-none text-sm"
                 />
               </div>
 
@@ -104,7 +102,7 @@ export default function Help() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 rounded border border-gray-300 bg-[#F8F9FA] focus:outline-none"
+                className="w-full px-4 py-2 rounded border border-gray-300 bg-[#F8F9FA] focus:outline-none text-sm"
               />
 
               <div className="flex flex-col md:flex-row gap-4">
@@ -114,7 +112,7 @@ export default function Help() {
                   placeholder="City"
                   value={formData.city}
                   onChange={handleChange}
-                  className="flex-1 px-4 py-2 rounded border border-gray-300 bg-[#F8F9FA] focus:outline-none"
+                  className="flex-1 px-4 py-2 rounded border border-gray-300 bg-[#F8F9FA] focus:outline-none text-sm"
                 />
                 <input
                   name="topic"
@@ -123,7 +121,7 @@ export default function Help() {
                   value={formData.topic}
                   onChange={handleChange}
                   required
-                  className="flex-1 px-4 py-2 rounded border border-gray-300 bg-[#F8F9FA] focus:outline-none"
+                  className="flex-1 px-4 py-2 rounded border border-gray-300 bg-[#F8F9FA] focus:outline-none text-sm"
                 />
               </div>
 
@@ -134,7 +132,7 @@ export default function Help() {
                 value={formData.description}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 rounded border border-gray-300 bg-[#F8F9FA] focus:outline-none"
+                className="w-full px-4 py-2 rounded border border-gray-300 bg-[#F8F9FA] focus:outline-none text-sm"
               ></textarea>
 
               <button
@@ -150,22 +148,17 @@ export default function Help() {
                 </p>
               )}
 
-               
-              {/* Contact Info Side by Side */}
-                <div className=" flex flex-wrap justify-center gap-6 text-white">
-                  <div className="flex items-center gap-2">
-                    <FaPhoneAlt className="text-[#FCA311]" />
-                    <span className="text-sm">+91 88821 53238</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <FaEnvelope className="text-[#FCA311]" />
-                    <span className="text-sm">info@docengoeducation.com</span>
-                  </div>
+              {/* Contact Info */}
+              <div className="flex flex-wrap justify-center gap-6 text-white mt-6">
+                <div className="flex items-center gap-2">
+                  <FaPhoneAlt className="text-[#FCA311]" />
+                  <span className="text-sm">+91 88821 53238</span>
                 </div>
-
-
-
-
+                <div className="flex items-center gap-2">
+                  <FaEnvelope className="text-[#FCA311]" />
+                  <span className="text-sm break-all">info@docengoeducation.com</span>
+                </div>
+              </div>
             </form>
           </div>
         </div>
