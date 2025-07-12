@@ -53,10 +53,22 @@ import Banner4 from '../assets/Banner4.png';
         {/* Tagline + Animation Section */}
         <div className="flex flex-col lg:flex-row items-center justify-betbodyween px-6 lg:px-24 py-[3rem] pb-[8rem] gap-12 bg-[#edf2fe]">
           {/* Tagline */}
-          <div className="max-w-[600px]">
-            <h1 className="text-4xl font-extrabold leading-snug text-[#14213d]">
-              Because <span className="text-red-500">Random Videos</span> and <span className="text-red-500">10x</span> speed won’t save your rank!
-            </h1>
+<div className="max-w-[600px]">
+  {/* ✅ Visitor Counter (above heading, inside light bg) */}
+  <div className="mb-4">
+    <a href="https://www.hitwebcounter.com" target="_blank" rel="noopener noreferrer">
+      <img
+        src="https://hitwebcounter.com/counter/counter.php?page=21136147&style=0050&nbdigits=6&type=page&initCount=1000"
+        title="Visitor Counter"
+        alt="Visit counter For Websites"
+        style={{ border: "0" }}
+      />
+    </a>
+  </div>
+
+  <h1 className="text-4xl font-extrabold leading-snug text-[#14213d]">
+    Because <span className="text-red-500">Random Videos</span> and <span className="text-red-500">10x</span> speed won’t save your rank!
+  </h1>
             <p className="text-lg text-gray-600 mt-4">
               Real learning. Real mentors. Real results — That’s Docengo.
             </p>
