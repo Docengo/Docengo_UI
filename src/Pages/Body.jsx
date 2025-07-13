@@ -54,7 +54,7 @@ import Banner4 from '../assets/Banner4.png';
         <div className="flex flex-col lg:flex-row items-center justify-betbodyween px-6 lg:px-24 py-[3rem] pb-[8rem] gap-12 bg-[#edf2fe]">
           {/* Tagline */}
 <div className="max-w-[600px]">
-  {/* ✅ Visitor Counter (above heading, inside light bg) */}
+  {/* ✅ Visitor Counter (above heading, inside light bg)
   <div className="mb-4">
     <a href="https://www.hitwebcounter.com" target="_blank" rel="noopener noreferrer">
       <img
@@ -64,7 +64,7 @@ import Banner4 from '../assets/Banner4.png';
         style={{ border: "0" }}
       />
     </a>
-  </div>
+  </div> */}
 
   <h1 className="text-4xl font-extrabold leading-snug text-[#14213d]">
     Because <span className="text-red-500">Random Videos</span> and <span className="text-red-500">10x</span> speed won’t save your rank!
