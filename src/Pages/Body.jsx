@@ -73,8 +73,15 @@ import Banner4 from '../assets/Banner4.png';
               Real learning. Real mentors. Real results — That’s Docengo.
             </p>
             <Link to="/batches">
-            <button className="mt-6 bg-gradient-to-r from-red-500 to-[#14213d] hover:opacity-90 text-white font-semibold px-6 py-3 rounded-xl shadow-md">
-              Unlock Docengo 🔓
+            <button className="mt-6 bg-gradient-to-r from-red-500 to-[#14213d] hover:opacity-90 text-white font-semibold px-6 py-3 rounded-xl shadow-md"
+            onClick={() =>
+              window.open(
+                "https://wa.me/918882153238?text=Hi%2C%20I'm%20interested%20in%20FREE%20Demo%20Session",
+                "_blank"
+              )
+            }
+            >
+            Book a Free Demo Session ⭐️
             </button>
             </Link>
 
