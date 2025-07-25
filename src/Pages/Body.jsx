@@ -14,9 +14,10 @@ import FloatingFeedback from "../components/FloatingFeedback";
 import { Link } from 'react-router-dom';
 import Banner3 from '../assets/Banner3.png';
 import Banner4 from '../assets/Banner4.png';
+import Banner5 from '../assets/Banner5.png';
 
 
-  const banners = [Banner1, Banner2, Banner3, Banner4];
+  const banners = [Banner5, Banner1, Banner2, Banner3, Banner4];
 
  function Body() {
   const [currentBanner, setCurrentBanner] = useState(0);
