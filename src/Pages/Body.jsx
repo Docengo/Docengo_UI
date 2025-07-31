@@ -71,7 +71,7 @@ import Banner5 from '../assets/Banner5.png';
     Because <span className="text-red-500">Random Videos</span> and <span className="text-red-500">10x</span> speed won’t save your rank!
   </h1>
             <p className="text-lg text-gray-600 mt-4">
-              Real learning. Real mentors. Real results — That’s Docengo.
+            Your pace. Your topic. Your mentor - That's Docengo.
             </p>
             <Link to="/batches">
             <button className="mt-6 bg-gradient-to-r from-red-500 to-[#14213d] hover:opacity-90 text-white font-semibold px-6 py-3 rounded-xl shadow-md"
