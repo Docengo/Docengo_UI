@@ -6,8 +6,8 @@ import CourseCard from './CourseCard';
 // Main CourseCards Component
 export default function CardContainer() {
   const courses = [
-    { title: 'NEET Courses', image: Doctor, link: '/neet' },
-    { title: 'JEE Courses', image: Engineer, link: '/jee' },
+    { title: 'NEET', image: Doctor, link: '/neet' },
+    { title: 'JEE', image: Engineer, link: '/jee' },
     { title: 'Other Exams', image: CExam, link: '/foundation' },
   ];
 

@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Banner1 from '../assets/Banner1.png';
 import Banner2 from '../assets/Banner2.png';
 import CardContainer from '../components/CardContainer';
-import animation from "../assets/animation.mp4";
+import animationn from "../assets/animationn.mp4";
 import Pros from './Pros';
 import About from "./About";
 import Footer from '../components/Footer';
@@ -92,7 +92,7 @@ import Banner5 from '../assets/Banner5.png';
           {/* Animation Video */}
           <div className="max-w-[600px] w-full">
             <video
-              src={animation}
+              src={animationn}
               autoPlay
               loop
               muted

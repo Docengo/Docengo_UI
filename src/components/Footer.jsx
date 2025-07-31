@@ -35,7 +35,7 @@ function Footer() {
                 One mentor for just 5 students, handwritten notes, live Zoom doubt sessions, topic-wise learning, and
                 India's best JEE/NEET experts. <br />
                 We don’t sell 1-year packages — we sell <strong>clarity in one topic</strong> for the
-                <em> price of a Cadbury 🍫</em>. So affordable, so focused.
+                <em> price of a Chocolate 🍫</em>. So affordable, so focused.
               </div>
 
               <div>
@@ -57,8 +57,8 @@ function Footer() {
             <h3 className="text-lg font-semibold mb-3">Explore</h3>
             <ul className="space-y-2 text-sm text-[#E5E5E5]">
               <li><a href="/about" className="hover:text-[#FCA311]">About Us</a></li>
-              <li><a href="/neet-batches" className="hover:text-[#FCA311]">NEET Courses</a></li>
-              <li><a href="/jee-batches" className="hover:text-[#FCA311]">JEE Courses</a></li>
+              <li><a href="/neet-batches" className="hover:text-[#FCA311]">NEET</a></li>
+              <li><a href="/jee-batches" className="hover:text-[#FCA311]">JEE</a></li>
               <li><a href="/other-exams" className="hover:text-[#FCA311]">Other Competitive Exams</a></li>
             </ul>
           </div>

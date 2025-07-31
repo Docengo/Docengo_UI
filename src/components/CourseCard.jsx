@@ -32,7 +32,7 @@ function CourseCard({ title, image }) {
             <button
               className="group text-[#FCA311] text-md font-semibold hover:scale-[1.08] hover:font-bold py-2 px-4 rounded-3xl shadow transition"
             >
-              <span className="underline underline-offset-2 hover:text-red-600">Explore Batches</span>{" "}
+              <span className="underline underline-offset-2 hover:text-red-600">Explore Sessions</span>{" "}
               <span className="text-[#FCA311] text-lg font-semibold no-underline group-hover:text-red-600 transition">
                 →
               </span>
