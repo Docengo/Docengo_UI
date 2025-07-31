@@ -68,7 +68,7 @@ import Banner5 from '../assets/Banner5.png';
   </div> */}
 
   <h1 className="text-4xl font-extrabold leading-snug text-[#14213d]">
-    Because <span className="text-red-500">Random Videos</span> and <span className="text-red-500">10x</span> speed won’t save your rank!
+  जब <span className="text-red-500">Topic</span> हो Weak, <span className="text-red-500">Docengo </span>करे ठीक!
   </h1>
             <p className="text-lg text-gray-600 mt-4">
             Your pace. Your topic. Your mentor - That's Docengo.
