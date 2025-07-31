@@ -25,7 +25,7 @@ import Banner5 from '../assets/Banner5.png';
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBanner((prev) => (prev + 1) % banners.length);
-    }, 5000);
+    }, 8000);
     return () => clearInterval(interval);
   }, []);
 
