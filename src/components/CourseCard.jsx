@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 function CourseCard({ title, image }) {
   // Determine route based on title
   let route = '';
-  if (title === 'NEET Courses') route = '/neet-batches';
-  else if (title === 'JEE Courses') route = '/jee-batches';
+  if (title === 'NEET') route = '/neet-batches';
+  else if (title === 'JEE') route = '/jee-batches';
   else if (title === 'Other Exams') route = '/other-exams';
 
   return (
