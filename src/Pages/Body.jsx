@@ -29,6 +29,25 @@ import Banner5 from '../assets/Banner5.png';
     return () => clearInterval(interval);
   }, []);
 
+   // ✅ Location tracking
+   useEffect(() => {
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        console.log("🌍 Visitor Location Data:");
+        console.log("IP Address:", data.ip);
+        console.log("City:", data.city);
+        console.log("Region:", data.region);
+        console.log("Country:", data.country_name);
+        console.log("Latitude:", data.latitude);
+        console.log("Longitude:", data.longitude);
+        console.log("Timezone:", data.timezone);
+      })
+      .catch(error => {
+        console.error("❌ Failed to get location data:", error);
+      });
+  }, []);
+  
   return (
     <div>
       <Navbar />
