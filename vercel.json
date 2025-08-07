@@ -25,7 +25,19 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!sitemap.xml|robots.txt|favicon.ico).*)",
+      "source": "/sitemap.xml",
+      "destination": "/sitemap.xml"
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/robots.txt"
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/favicon.ico"
+    },
+    {
+      "source": "/:path*",
       "destination": "/"
     }
   ]
