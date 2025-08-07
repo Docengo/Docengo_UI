@@ -16,7 +16,7 @@
         },
         {
           "key": "Content-Disposition",
-          "value": "attachment; filename=\"sitemap.xml\""
+          "value": "inline; filename=\"sitemap.xml\""
         }
       ]
     }
