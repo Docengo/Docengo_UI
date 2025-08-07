@@ -17,7 +17,7 @@ const features = [
   },
   {
     icon: <FaRocket size={28} className="text-[#E63946]" />,
-    title: "Topic-wise Buying 🚀",
+    title: "No need to Buy the Full Course ❌",
     description:
       "Why pay for the full course when you're only stuck in Organic Chemistry? Buy only what you need, when you need it — like shopping for rank boosters at Cadbury prices.",
   },
