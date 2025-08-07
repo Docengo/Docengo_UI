@@ -18,7 +18,9 @@
     }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+    {
+      "source": "/((?!sitemap.xml|robots.txt|favicon.ico).*)",
+      "destination": "/"
+    }
   ]
-  
 }
