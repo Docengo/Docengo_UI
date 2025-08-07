@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://docengo.com/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://docengo.com/signup</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://docengo.com/login</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://docengo.com/body</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://docengo.com/doubt</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://docengo.com/testSeries</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://docengo.com/docengoNotes</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://docengo.com/help</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://docengo.com/about</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://docengo.com/neet-batches</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://docengo.com/jee-batches</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://docengo.com/other-exams</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://docengo.com/batches</loc>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
