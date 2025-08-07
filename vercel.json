@@ -48,7 +48,7 @@
       "destination": "/favicon.ico"
     },
     {
-      "source": "/:path*",
+      "source": "/((?!sitemap.xml|robots.txt|favicon.ico).*)",
       "destination": "/"
     }
   ]
