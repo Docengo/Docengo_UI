@@ -73,7 +73,7 @@ import Banner5 from '../assets/Banner5.png';
             <p className="text-lg text-gray-600 mt-4">
             Your pace. Your topic. Your mentor - That's Docengo.
             </p>
-            <Link to="/batches">
+            {/* <Link to="/batches"> */}
             <button className="mt-6 bg-gradient-to-r from-red-500 to-[#14213d] hover:opacity-90 text-white font-semibold px-6 py-3 rounded-xl shadow-md"
             onClick={() =>
               window.open(
@@ -84,7 +84,7 @@ import Banner5 from '../assets/Banner5.png';
             >
             Book a Free Demo Session ⭐️
             </button>
-            </Link>
+            {/* </Link> */}
 
 
           </div>
