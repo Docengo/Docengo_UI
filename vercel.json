@@ -27,11 +27,12 @@
       ]
     }
   ],
+  "redirects": [
+    { "source": "/", "destination": "/body", "permanent": true }
+  ],
   "rewrites": [
   { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
   { "source": "/robots.txt", "destination": "/robots.txt" },
-  { "source": "/", "destination": "/body" },
   { "source": "/((?!sitemap\\.xml|robots\\.txt).*)", "destination": "/index.html" }
-],
-  "redirects": []
+]
 }
