@@ -28,13 +28,8 @@
     }
   ],
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
-  "excludeFiles": [
-    "sitemap.xml",
-    "robots.txt"
-  ]
+  "redirects": []
 }
