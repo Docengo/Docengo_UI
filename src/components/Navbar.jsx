@@ -89,8 +89,8 @@ export default function Navbar() {
 
         {/* Dropdown */}
         {showDropdown && (
-          <div className="absolute right-0 mt-2 w-48 bg-[#1B263B] text-white rounded shadow-lg z-100 flex flex-col border border-[#FCA311]">
-            <div className="md:hidden flex flex-col z-100">
+          <div className="absolute right-0 z-50 mt-2 w-48 bg-[#1B263B] text-white rounded shadow-lg z-100 flex flex-col border border-[#FCA311]">
+            <div className="md:hidden flex flex-col z-50">
               <Link to="/batches" className="px-4 py-2 hover:bg-[#FCA311]/20">Batches</Link>
               <Link to="/docengoNotes" className="px-4 py-2 hover:bg-[#FCA311]/20">Docengo Notes</Link>
               <Link to="/testSeries" className="px-4 py-2 hover:bg-[#FCA311]/20">Test Series</Link>
