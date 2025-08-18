@@ -42,7 +42,7 @@ function About() {
             Docengo isn’t just a platform. It’s the plan.
             We’re redefining preparation for students who demand more — more depth, more clarity, more results.
             <br />No fluff. No fear. Just fuel for your ambition.
-            NEET, JEE, or any goal — we’ve got your back with real mentors and resources that deliver.
+            NEET, JEE, CAT, UPSC or any goal — we’ve got your back with real mentors and resources that deliver.
           </p>
 
           <Link to ="/batches">

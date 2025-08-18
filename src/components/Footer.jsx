@@ -33,13 +33,13 @@ function Footer() {
               <div>
                 <strong>What Makes Us Different?</strong><br />
                 One mentor for just 5 students, handwritten notes, live Zoom doubt sessions, topic-wise learning, and
-                India's best JEE/NEET experts. <br />
+                India's best JEE/NEET/CAT/UPSC experts. <br />
                 We don’t sell 1-year packages — we sell <strong>clarity in one topic</strong> for the
                 <em> price of a Chocolate 🍫</em>. So affordable, so focused.
               </div>
 
               <div>
-                Whether it’s Boards, NEET, or JEE — save your time, sharpen your prep, and get your Rank.
+                Whether it’s Boards, NEET, JEE, CAT or UPSC — save your time, sharpen your prep, and get your Rank.
                 Jab Docengo hai, toh panic kaisa bro? 😎
               </div>
             </div>
@@ -59,6 +59,8 @@ function Footer() {
               <li><a href="/about" className="hover:text-[#FCA311]">About Us</a></li>
               <li><a href="/neet-batches" className="hover:text-[#FCA311]">NEET</a></li>
               <li><a href="/jee-batches" className="hover:text-[#FCA311]">JEE</a></li>
+              <li><a href="/other-exams" className="hover:text-[#FCA311]">CAT</a></li>
+              <li><a href="/other-exams" className="hover:text-[#FCA311]">UPSC</a></li>
               <li><a href="/other-exams" className="hover:text-[#FCA311]">Other Competitive Exams</a></li>
             </ul>
           </div>

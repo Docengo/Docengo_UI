@@ -18,8 +18,8 @@ const data = [
   },
   {
     icon: three,
-    title: 'Taught by IITian Faculty',
-    subtitle: '& NEET Toppers',
+    title: 'Taught by Exam Qualified Faculty',
+    subtitle: 'JEE, NEET, CAT & UPSC Toppers',
   },
   {
     icon: four,

@@ -13,7 +13,7 @@ const features = [
     icon: <FaPenFancy size={28} className="text-[#E63946]" />,
     title: "Handwritten Notes",
     description:
-      "We’re talking real notes — the exact ones used by IITians and top Doctors. Clear, colorful, and brain-friendly. These aren’t just notes — they’re exam-winning cheat codes, handwritten for you.",
+      "We’re talking real notes — the exact ones used by IITians, Doctors, CAT & UPSC Qualified Faculty. Clear, colorful, and brain-friendly. These aren’t just notes — they’re exam-winning cheat codes, handwritten for you.",
   },
   {
     icon: <FaRocket size={28} className="text-[#E63946]" />,
@@ -29,7 +29,7 @@ const features = [
   },
   {
     icon: <FaClipboardCheck size={28} className="text-[#E63946]" />,
-    title: "Boards + NEET/JEE = ✅",
+    title: "Boards + NEET/JEE + CAT + UPSC = ✅",
     description:
       "Dual prep made smart. Ace both boards and entrance exams without burning out. Start early in 9th–10th to build a strong base — and if you’re in 11th, 12th, or a dropper: let’s hustle harder for your dream rank.",
   },
