@@ -1,6 +1,8 @@
 import React from 'react';
 import { FiPhoneCall, FiShare2 } from 'react-icons/fi';
 import { FaBrain } from 'react-icons/fa'; // AI brain icon
+import UpscEvalAIImg from "../assets/UPSC EvalAI floating image.png";
+
 
 const FloatingActions = () => {
   const handleShare = () => {
@@ -17,6 +19,21 @@ const FloatingActions = () => {
 
   return (
     <div className="fixed right-4 bottom-24 flex flex-col items-center gap-4 z-50">
+
+     {/* 🚀 Docengo UPSC EvalAI */}
+     <a
+  target="_blank"
+  href="https://docengo-upsc-answer-eval-ai.vercel.app/"
+  className="relative flex items-center justify-center w-16 h-16 rounded-2xl 
+             bg-gradient-to-r from-cyan-500 to-blue-600 shadow-[0_0_25px_rgba(34,211,238,0.8)]
+             transition-all duration-300 hover:scale-110 hover:shadow-[0_0_35px_rgba(59,130,246,0.9)]"
+  title="🚀 Docengo UPSC EvalAI - Diagnostic Tool"
+>
+  <img src={UpscEvalAIImg} alt="UPSC EvalAI" className="w-10 h-10" />
+</a>
+
+
+
 
       {/* 🚀 Docengo AI - Diagnostic Tool */}
       <a
