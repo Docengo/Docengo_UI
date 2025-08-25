@@ -20,6 +20,37 @@ const FloatingActions = () => {
   return (
     <div className="fixed right-4 bottom-24 flex flex-col items-center gap-4 z-50">
 
+{/* 🚀 Docengo CAT AI */}
+<a
+  target="_blank"
+  href="https://docengocatai.netlify.app/"
+  className="relative flex items-center justify-center w-20 h-20 rounded-full
+             bg-gradient-to-br from-teal-400 via-lime-400 to-sky-500
+             ring-4 ring-offset-2 ring-white shadow-inner
+             transition-all duration-300 hover:scale-110 
+             hover:ring-offset-4 hover:shadow-[inset_0_0_12px_rgba(0,0,0,0.3)]"
+  title="🚀 Docengo CAT AI"
+>
+  {/* 🐱 Cat Face Icon */}
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 64 64"
+    className="w-12 h-12"
+  >
+    {/* Cat head */}
+    <circle cx="32" cy="32" r="20" fill="black" />
+    {/* Ears */}
+    <polygon points="18,20 10,5 22,16" fill="black" />
+    <polygon points="46,20 54,5 42,16" fill="black" />
+    {/* Eyes */}
+    <circle cx="25" cy="32" r="5" fill="white" />
+    <circle cx="39" cy="32" r="5" fill="white" />
+    {/* Smile */}
+    <path d="M26 44 Q32 50 38 44" stroke="white" strokeWidth="2" fill="none" />
+  </svg>
+</a>
+
+          
      {/* 🚀 Docengo UPSC EvalAI */}
      <a
   target="_blank"
