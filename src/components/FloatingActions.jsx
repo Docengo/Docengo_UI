@@ -24,30 +24,19 @@ const FloatingActions = () => {
 <a
   target="_blank"
   href="https://docengocatai.netlify.app/"
-  className="relative flex items-center justify-center w-20 h-20 rounded-full
-             bg-gradient-to-br from-teal-400 via-lime-400 to-sky-500
-             ring-4 ring-offset-2 ring-white shadow-inner
+  className="relative flex items-center justify-center w-18 h-18 rounded-full
+             bg-gradient-to-br from-black via-gray-900 to-green-600
+             ring-4 ring-offset-2 ring-lime-400
+             shadow-[0_0_25px_rgba(132,204,22,0.8)]
              transition-all duration-300 hover:scale-110 
-             hover:ring-offset-4 hover:shadow-[inset_0_0_12px_rgba(0,0,0,0.3)]"
+             hover:ring-offset-4 hover:shadow-[0_0_40px_rgba(132,204,22,1)]"
   title="🚀 Docengo CAT AI"
 >
-  {/* 🐱 Cat Face Icon */}
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 64 64"
-    className="w-12 h-12"
-  >
-    {/* Cat head */}
-    <circle cx="32" cy="32" r="20" fill="black" />
-    {/* Ears */}
-    <polygon points="18,20 10,5 22,16" fill="black" />
-    <polygon points="46,20 54,5 42,16" fill="black" />
-    {/* Eyes */}
-    <circle cx="25" cy="32" r="5" fill="white" />
-    <circle cx="39" cy="32" r="5" fill="white" />
-    {/* Smile */}
-    <path d="M26 44 Q32 50 38 44" stroke="white" strokeWidth="2" fill="none" />
-  </svg>
+  {/* CAT Text */}
+  <span className="text-2xl font-extrabold text-yellow-300 tracking-widest
+                   drop-shadow-[0_0_6px_rgba(0,0,0,1)]">
+    CAT
+  </span>
 </a>
 
           
