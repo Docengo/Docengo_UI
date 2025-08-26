@@ -10,7 +10,7 @@ export default function FloatingFeedback() {
 
   return (
     <>
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-4">
+      <div className="fixed bottom-7 right-4.5 z-50 flex flex-col items-center gap-4">
         {/* Feedback Button - square with rounded corners */}
         <button
           className="w-14 h-14 bg-red-600 hover:bg-red-700 rounded-xl shadow-xl flex items-center justify-center transition"
